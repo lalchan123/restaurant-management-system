@@ -345,13 +345,19 @@ const AddDishForm = async () => {
                   // { value: "Italian", label: "Italian" },
                   // { value: "BBQ", label: "BBQ" },
                   // { value: "Mexican", label: "Mexican" },
-                  { value: "Coffee", label: "Coffee" },
-                  { value: "Burger", label: "Burger" },
-                  { value: "Noodles", label: "Noodles" },
-                  { value: "Pizza", label: "Pizza" },
-                  { value: "Wrap", label: "Wrap" },
-                  { value: "Appetizers", label: "Appetizers" },
-                  { value: "Dessert", label: "Dessert" },
+                  { value: "indian breads", label: "indian breads" },
+                  { value: "Tandoori/Grill", label: "Tandoori/Grill" },
+                  { value: "Lamb", label: "Lamb" },
+                  { value: "Chicken", label: "Chicken" },
+                  { value: "Beef", label: "Beef" },
+                  { value: "Rice", label: "Rice" },
+                  { value: "Seafood", label: "Seafood" },
+                  { value: "Vegetables", label: "Vegetables" },
+                  { value: "Combo Platters", label: "Combo Platters" },
+                  { value: "Indian Desert", label: "Indian Desert" },
+                  { value: "Indian Pickles", label: "Indian Pickles" },
+                  { value: "Beverages", label: "Beverages" },
+                  { value: "Sauce", label: "Sauce" },
                 ]}
                 fullWidth
               />
@@ -496,7 +502,8 @@ const AddDishForm = async () => {
               </button>
               <button
                 type="submit"
-                className="flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-2.5 text-center text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-primary-500"
+                // className="flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-2.5 text-center text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-primary-500"
+                className="flex items-center justify-center gap-2 rounded-lg bg-green-500 px-6 py-2.5 text-center text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-green-600"
               >
                 <LuSave size={20} />
                 Save

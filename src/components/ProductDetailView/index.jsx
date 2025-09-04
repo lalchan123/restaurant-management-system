@@ -119,7 +119,8 @@ const ProductDetailView = async ({ dish, restuarantName, showButtons }) => {
             />
             <label
               htmlFor={size + idx}
-              className="flex h-9 w-9 cursor-pointer select-none items-center justify-center rounded-full bg-default-200 text-center text-sm peer-checked:bg-primary peer-checked:text-white"
+              // className="flex h-9 w-9 cursor-pointer select-none items-center justify-center rounded-full bg-default-200 text-center text-sm peer-checked:bg-primary peer-checked:text-white"
+              className="flex h-9 w-9 cursor-pointer select-none items-center justify-center rounded-full bg-default-200 text-center text-sm peer-checked:bg-green-500 peer-checked:text-white"
             >
               {size}
             </label>

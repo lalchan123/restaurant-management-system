@@ -18,7 +18,7 @@ const DiscountCard = ({ discount, link }) => {
         <p className="mb-6 text-lg text-default-500">on your first order</p>
         <Link
           // className="inline-flex items-center justify-center gap-2 rounded-full border border-primary bg-primary px-4 py-2 text-center text-sm font-medium text-white shadow-sm transition-all duration-200 hover:border-primary-700 hover:bg-primary-500 md:mb-10"
-          className="inline-flex items-center justify-center gap-2 rounded-full border border-green-500 bg-green-500 px-4 py-2 text-center text-sm font-medium text-white shadow-sm transition-all duration-200 hover:border-primary-700 hover:bg-primary-500 md:mb-10"
+          className="inline-flex items-center justify-center gap-2 rounded-full border border-green-500 bg-green-500 px-4 py-2 text-center text-sm font-medium text-white shadow-sm transition-all duration-200 hover:border-green-700 hover:bg-green-600 md:mb-10"
           href={link}
           onClick={() =>
             localStorage.setItem("DiscountOfferPercentageFirstOrder", parseInt(52))

@@ -12,7 +12,7 @@ const AppProvidersWrapper = ({ children }) => {
     if (document.visibilityState == "hidden")
       document.title = "Please come back :-(";
     else
-      document.title = "Yum Nextjs - Multipurpose Food Tailwind CSS Template";
+      document.title = "Taste of India ";
   };
 
   useEffect(() => {

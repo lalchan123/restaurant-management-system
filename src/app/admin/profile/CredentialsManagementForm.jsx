@@ -3,8 +3,17 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { PasswordFormInput } from "@/components";
+import { useSession } from "next-auth/react";
+import { BaseURL } from "@/ApiCallMethod/Constants";
+import restAPIPost from "@/ApiCallMethod/restAPIPost";
+import { toast } from "sonner";
+import { useRouter } from "next/navigation";
+import sendMail from "@/ApiCallMethod/sendMail";
+import { signOut } from "next-auth/react";
 
-const CredentialsManagementForm = () => {
+const CredentialsManagementForm = async () => {
+  const router = useRouter();
+  const { data: session } = useSession();
   const credentialsManagementFormSchema = yup.object({
     currentPassword: yup
       .string()
@@ -19,8 +28,49 @@ const CredentialsManagementForm = () => {
     resolver: yupResolver(credentialsManagementFormSchema),
   });
 
+  const onSubmit = async (data) => {
+    console.log("32 Data:", data);
+             
+    const payload = {
+      "email_or_username_or_phone_number": session?.user?.data[0]?.email,
+      "currentPassword": data?.currentPassword,
+      "newPassword": data?.newPassword,
+      "confirmPassword": data?.confirmPassword,
+    }
+    
+    const apiUrl = `${BaseURL}/account/change-password-by-email/`;
+    const response_data = await restAPIPost(apiUrl, payload)
+    console.log("166 response_data", response_data)
+    if(response_data.status == 200) {
+      var message = `Your Password Change Successfully. Please try login your account with your change password.`
+    
+      const EmailMessage ={
+        subject: "Change Password Successfully",
+        phone: "01306817790",
+        email: session?.user?.data[0]?.email,
+        message: message
+      }
+      const { result: result1, message: message1 } = sendMail(EmailMessage);
+      console.log("98 result1", result1);
+      console.log("99 message1", message1);
+      if (result1 === true) {
+        toast.success(response_data?.message);
+        async function logoutUser() {
+          await signOut({ redirect: false });
+          router.push("/auth/login");
+        }
+        logoutUser();
+        
+      } else {
+        toast.error("Email Send Problem.");
+      }
+    } else {
+      toast.error("Something Problem forget change password by email Purpose.");
+    }
+  }
+
   return (
-    <form onSubmit={handleSubmit(() => {})}>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <h4 className="mb-4 text-xl font-medium text-default-900">
         Change Password
       </h4>

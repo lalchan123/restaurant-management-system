@@ -69,7 +69,7 @@ const CustomerDataTable = ({
                     </div>
                   </th>
 
-                  {columns.map((column) => (
+                  {columns?.map((column) => (
                     <th
                       key={column.key}
                       scope="col"
@@ -81,7 +81,7 @@ const CustomerDataTable = ({
                 </tr>
               </thead>
               <tbody className="divide-y divide-default-200">
-                {rows.map((row, idx) => {
+                {rows?.map((row, idx) => {
                   return (
                     <tr key={idx}>
                       <td className="whitespace-nowrap px-6 py-4">

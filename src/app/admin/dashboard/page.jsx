@@ -35,7 +35,7 @@ const Dashboard = () => {
   ];
 
   return (
-    <div className="w-full lg:ps-64">
+    <div className="w-full lg:ps-64 bg-green-600/5">
       <div className="page-content space-y-6 p-6">
         <BreadcrumbAdmin title="Dashboard" subtitle="Admin" />
         <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-6">

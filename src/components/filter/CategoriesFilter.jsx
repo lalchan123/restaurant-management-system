@@ -14,7 +14,8 @@ const CategoriesFilter = () => {
             defaultChecked={categories.includes(category.name)}
             onChange={() => updateCategory(category.name)}
             type="checkbox"
-            className="form-checkbox h-5 w-5 cursor-pointer rounded border-default-400 bg-transparent text-primary focus:ring-transparent"
+            // className="form-checkbox h-5 w-5 cursor-pointer rounded border-default-400 bg-transparent text-primary focus:ring-transparent"
+            className="form-checkbox h-5 w-5 cursor-pointer rounded border-default-400 bg-transparent text-green-500 focus:ring-transparent"
           />
           <label
             htmlFor={category.name + category.id}

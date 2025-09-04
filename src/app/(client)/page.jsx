@@ -37,7 +37,8 @@ const Home = () => {
     <>
       <section className="relative py-6 lg:py-16">
         {/* <div className="absolute inset-0 bg-gradient-to-l from-orange-600/20 via-orange-600/5 to-orange-600/0 blur-[60px]" /> */}
-        <div className="absolute inset-0 bg-gradient-to-l from-green-600/20 via-green-600/5 to-green-600/0 blur-[60px]" />
+        {/* <div className="absolute inset-0 bg-gradient-to-l from-green-600/20 via-green-600/5 to-green-600/0 blur-[60px]" /> */}
+        <div className="absolute inset-0 bg-green-600/5" />
         <div className="container relative">
           <div className="grid items-center lg:grid-cols-2">
             <div className="px-10 py-20">
@@ -236,7 +237,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="py-6 lg:py-16">
+      <section className="py-6 lg:py-16 bg-green-600/5">
         <div className="container">
           <div className="grid items-start gap-10 lg:grid-cols-2">
             <div>
@@ -346,7 +347,7 @@ const Home = () => {
 
       <SpecialMenu />
 
-      <section className="py-6 lg:py-16">
+      <section className="py-6 lg:py-16 bg-green-600/5">
         <div className="container">
           <div className="grid grid-cols-1 items-center gap-20 lg:grid-cols-2">
             <div>

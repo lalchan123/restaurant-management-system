@@ -13,8 +13,10 @@ const ProductWishlistToggler = ({ dish, size }) => {
         className={cn(
           "relative z-10 cursor-pointer transition-all",
           isInWishlist(dish)
-            ? "fill-red-500 text-red-500"
-            : "hover:fill-red-500 hover:text-red-500"
+            ? "fill-green-500 text-green-500"
+            : "hover:fill-green-500 hover:text-green-500"
+            // ? "fill-red-500 text-red-500"
+            // : "hover:fill-red-500 hover:text-red-500"
         )}
       />
     </button>

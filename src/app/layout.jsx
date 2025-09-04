@@ -121,7 +121,8 @@ export default function RootLayout({ children }) {
       </head>
 
       <body
-        className={`${poppins.className} selection:bg-primary selection:text-white`}
+        // className={`${poppins.className} selection:bg-primary selection:text-white`}
+        className={`${poppins.className} selection:bg-green-600/2 selection:text-white`}
       >
         <div id="splash-screen">
           <Image
@@ -137,7 +138,7 @@ export default function RootLayout({ children }) {
           <AppProvidersWrapper>
             {children}
             <BackToTop />
-            <Toaster richColors />
+            <Toaster richColors position="top-right" />
           </AppProvidersWrapper>
         </div>
       </body>

@@ -15,7 +15,7 @@ const PriceFilter = () => {
     // minPrice ?? prices?.minPrice ?? 0,
     //  maxPrice ?? prices?.maxPrice ?? 3000,
     minPrice ?? 0,
-    maxPrice ?? 3000,
+    maxPrice ?? 200,
   ]);
   const onPriceChange = (values) => {
     setPriceRange([values[0], values[1]]);
@@ -49,10 +49,13 @@ const PriceFilter = () => {
           <div className="space-y-2 pt-4">
             <ReactSlider
               className="h-6 w-full max-w-[500px]"
-              thumbClassName="h-5 w-5 rounded-full -right-2.5 -top-1.5 outline-none cursor-pointer bg-primary border-2 transition-colors border-primary-600 hover:bg-primary-600"
-              trackClassName="bg-[#ddd] h-2 rounded-lg [&.slider-track-1]:bg-primary-400 slider-track"
+              // thumbClassName="h-5 w-5 rounded-full -right-2.5 -top-1.5 outline-none cursor-pointer bg-primary border-2 transition-colors border-primary-600 hover:bg-primary-600"
+              thumbClassName="h-5 w-5 rounded-full -right-2.5 -top-1.5 outline-none cursor-pointer bg-green-500 border-2 transition-colors border-green-600 hover:bg-green-600"
+              // trackClassName="bg-[#ddd] h-2 rounded-lg [&.slider-track-1]:bg-primary-400 slider-track"
+              trackClassName="bg-[#ddd] h-2 rounded-lg [&.slider-track-1]:bg-green-400 slider-track"
               min={0}
-              max={3000}
+              max={200}
+              // max={3000}
               defaultValue={[priceRange[0], priceRange[1]]}
               onAfterChange={onPriceChange}
             />

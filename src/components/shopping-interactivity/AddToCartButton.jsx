@@ -20,7 +20,8 @@ const AddToCartButton = ({ dish, className }) => {
   ) : (
     <button
       className={cn(
-        "relative z-10 inline-flex w-full items-center justify-center rounded-lg bg-primary px-6 py-3 text-center text-sm font-medium text-white shadow-sm transition-all duration-300 hover:bg-primary-500 lg:w-auto",
+        // "relative z-10 inline-flex w-full items-center justify-center rounded-lg bg-primary px-6 py-3 text-center text-sm font-medium text-white shadow-sm transition-all duration-300 hover:bg-primary-500 lg:w-auto",
+        "relative z-10 inline-flex w-full items-center justify-center rounded-lg bg-green-500 px-6 py-3 text-center text-sm font-medium text-white shadow-sm transition-all duration-300 hover:bg-green-500 lg:w-auto",
         className
       )}
       onClick={() => addToCart(dish, 1)}

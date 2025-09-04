@@ -11,7 +11,9 @@ import PopularDishOfferCard from "./PopularDishOfferCard";
 const MegaProductFilter = () => {
   return (
     <div
-      className="hs-overlay fixed start-0 top-0 z-60 hidden h-full w-full max-w-xs -translate-x-full transform bg-white transition-all hs-overlay-open:translate-x-0 dark:bg-default-50 lg:static lg:start-auto lg:z-auto lg:block lg:w-1/4 lg:max-w-full lg:translate-x-0"
+      // className="hs-overlay fixed start-0 top-0 z-60 hidden h-full w-full max-w-xs -translate-x-full transform bg-white transition-all hs-overlay-open:translate-x-0 dark:bg-default-50 lg:static lg:start-auto lg:z-auto lg:block lg:w-1/4 lg:max-w-full lg:translate-x-0"
+      // className="hs-overlay fixed start-0 top-0 z-60 hidden h-full w-full max-w-xs -translate-x-full transform bg-green-500/5 transition-all hs-overlay-open:translate-x-0 dark:bg-default-50 lg:static lg:start-auto lg:z-auto lg:block lg:w-1/4 lg:max-w-full lg:translate-x-0"
+      className="hs-overlay fixed start-0 top-0 z-60 hidden h-full w-full max-w-xs -translate-x-full transform transition-all hs-overlay-open:translate-x-0  lg:static lg:start-auto lg:z-auto lg:block lg:w-1/4 lg:max-w-full lg:translate-x-0"
       id="filter_Offcanvas"
       tabIndex={-1}
     >

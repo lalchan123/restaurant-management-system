@@ -61,7 +61,7 @@ const SpecialMenu = () => {
   );
 
   return (
-    <section className="py-6 lg:py-16">
+    <section className="py-6 lg:py-16 bg-green-600/5">
       <div className="container">
         <div className="grid gap-6 lg:grid-cols-4 lg:gap-10">
           <div>

@@ -98,7 +98,7 @@ const OrderListPage = async() => {
     }
     const apiUrl = `${BaseURL}/account/restaurant-products-sales-api/`;
     const ordersDataList = await restAPIPost(apiUrl, payload)
-    // console.log("166 ordersDataList", ordersDataList)
+    console.log("166 ordersDataList", ordersDataList)
     setColumns(ordersDataList?.data?.sales_column_name);
     setOrdersData(ordersDataList?.data?.sales);
   }

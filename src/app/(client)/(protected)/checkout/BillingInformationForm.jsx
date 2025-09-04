@@ -120,7 +120,8 @@ const BillingInformation = () => {
     return `ORD-${ts}-${rnd}`; // e.g. "ORD-MBG1M6-4Q8K2W"
   }
 
-  const OrderId = "#"+shortOrderId();
+  // const OrderId = "#"+shortOrderId();
+  const OrderId = shortOrderId();
   const now = new Date().toLocaleString();
 
   const onSubmit = async (data) => {

@@ -12,7 +12,8 @@ const BreadcrumbAdmin = ({ title, subtitle, link }) => {
         <li className="text-sm">
           <Link
             href={link ?? ""}
-            className="flex items-center gap-2 align-middle text-default-800 transition-all hover:text-primary-500"
+            // className="flex items-center gap-2 align-middle text-default-800 transition-all hover:text-primary-500"
+            className="flex items-center gap-2 align-middle text-green-500 transition-all hover:text-green-600"
           >
             {subtitle}
             <LuChevronRight size={16} />
@@ -20,7 +21,8 @@ const BreadcrumbAdmin = ({ title, subtitle, link }) => {
         </li>
         <li
           aria-current="page"
-          className="truncate text-sm font-medium text-primary hover:text-primary-500"
+          // className="truncate text-sm font-medium text-primary hover:text-primary-500"
+          className="truncate text-sm font-medium text-green-500 hover:text-green-600"
         >
           {title}
         </li>

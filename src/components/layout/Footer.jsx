@@ -6,7 +6,7 @@ const Footer = ({ hideLinks }) => {
   return (
     <footer
       className={cn(
-        "absolute w-full border-t border-default-200 p-6",
+        "absolute w-full border-t border-default-200 p-6 bg-green-600/5",
         hideLinks ? "lg:ps-64" : "lg:ps-8"
       )}
     >

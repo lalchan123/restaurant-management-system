@@ -45,7 +45,8 @@ const ShoppingCartCard = ({ dish }) => {
         </div>
       </td>
       <td className="whitespace-nowrap px-5 py-3 text-sm">
-        <h4 className="text-base font-semibold text-primary">
+        {/* <h4 className="text-base font-semibold text-primary"> */}
+        <h4 className="text-base font-semibold text-green-500">
           {currentCurrency}
           {dish?.Selling_Price}
           {/* {discountedPrice} */}

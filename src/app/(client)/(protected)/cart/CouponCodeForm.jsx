@@ -71,7 +71,8 @@ const CouponCodeForm = () => {
           <div className="mt-4 flex justify-end">
             <button
               type="submit"
-              className="inline-flex items-center justify-center rounded-lg border border-primary bg-primary px-6 py-3 text-center text-sm font-medium text-white shadow-sm transition-all duration-500 hover:bg-primary-500"
+              // className="inline-flex items-center justify-center rounded-lg border border-primary bg-primary px-6 py-3 text-center text-sm font-medium text-white shadow-sm transition-all duration-500 hover:bg-primary-500"
+              className="inline-flex items-center justify-center rounded-lg border border-green-500 bg-green-500 px-6 py-3 text-center text-sm font-medium text-white shadow-sm transition-all duration-500 hover:bg-green-500"
             >
               Apply Coupon
             </button>

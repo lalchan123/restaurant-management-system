@@ -10,7 +10,7 @@ import { notificationsData } from "@/assets/data";
 
 const TopbarAdmin = () => {
   return (
-    <header className="sticky top-0 z-40 flex h-18 w-full border-b border-default-200 bg-white dark:bg-default-50 lg:ps-64">
+    <header className="sticky top-0 z-40 flex h-18 w-full border-b border-default-200 bg-green-600/5 dark:bg-default-50 lg:ps-64">
       <nav className="flex w-full items-center gap-4 px-6">
         <div className="flex lg:hidden">
           <button
@@ -51,7 +51,7 @@ const TopbarAdmin = () => {
           <div className="relative hidden lg:flex">
             <input
               type="search"
-              className="block w-64 rounded-full border-default-200 bg-default-50 py-2.5 pe-4 ps-12 text-sm text-default-600 focus:border-primary focus:ring-primary"
+              className="block w-64 rounded-full border-default-200 bg-default-50 py-2.5 pe-4 ps-12 text-sm text-black focus:border-green-500 focus:ring-green-500"
               placeholder="Search for items..."
             />
             <span className="absolute start-4 top-2.5">

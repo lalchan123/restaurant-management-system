@@ -6,7 +6,7 @@ import { FOOTER_LINKS } from "@/assets/data";
 
 const FooterLinks = () => {
   return (
-    <div className="border-t border-default-200">
+    <div className="border-t border-default-200 bg-green-600/5">
       <div className="container">
         <div className="grid items-center gap-6 py-6 lg:grid-cols-3 lg:py-10">
           <div className="lg:col-span-2">

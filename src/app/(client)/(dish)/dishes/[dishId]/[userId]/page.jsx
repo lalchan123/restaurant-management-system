@@ -29,7 +29,7 @@ const ProductDetail = async ({ params }) => {
     <>
       <Breadcrumb title={dishData?.data[0]?.Product_Name} subtitle="Details" />
 
-      <section className="py-6 lg:py-10">
+      <section className="py-6 lg:py-10 bg-green-600/5">
         <div className="container">
           <div className="grid gap-6 lg:grid-cols-2">
             <DishDetailsSwiper images={dishData?.data} />
@@ -38,7 +38,7 @@ const ProductDetail = async ({ params }) => {
           </div>
         </div>
       </section>
-      <section className="py-6 lg:py-10">
+      <section className="py-6 lg:py-10 bg-green-600/5">
         <div className="container">
           <h4 className="mb-4 text-xl font-semibold text-default-800">
             You may also like

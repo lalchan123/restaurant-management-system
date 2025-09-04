@@ -9,7 +9,8 @@ export const metadata = {
 const BottomLink = () => (
   <p className="mt-auto text-center text-default-950">
     Already have an account ?{" "}
-    <Link href="/auth/login" className="ms-1 text-primary">
+    {/* <Link href="/auth/login" className="ms-1 text-primary"> */}
+    <Link href="/auth/login" className="ms-1 text-green-500">
       <span className="font-medium">Login</span>
     </Link>
   </p>
@@ -19,7 +20,8 @@ const Register = () => {
   return (
     <AuthFormLayout
       authTitle="Register"
-      helpText="Don't have an account? Create your account, it takes less than a minute at Yum"
+      // helpText="Don't have an account? Create your account, it takes less than a minute at Yum"
+      helpText="Don't have an account? Create your account."
       bottomLink={<BottomLink />}
       hasThirdPartyAuth
     >

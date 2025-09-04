@@ -12,7 +12,7 @@ const FAQs = () => {
   return (
     <>
       <Breadcrumb title="FAQs" />
-      <section className="py-6 lg:py-16">
+      <section className="py-6 lg:py-16 bg-green-600/5">
         <div className="container">
           <h1 className="mb-6 text-4xl font-medium text-default-800">
             Frequently Asked Questions
@@ -25,13 +25,15 @@ const FAQs = () => {
                     <div
                       key={idx}
                       className={cn(
-                        "hs-accordion overflow-hidden rounded-lg border border-default-200 hs-accordion-active:border-primary hs-accordion-active:shadow-[0px_8px_20px_0px_rgba(0,0,0,0.1)]",
+                        // "hs-accordion overflow-hidden rounded-lg border border-default-200 hs-accordion-active:border-primary hs-accordion-active:shadow-[0px_8px_20px_0px_rgba(0,0,0,0.1)]",
+                        "hs-accordion overflow-hidden rounded-lg border border-default-200 hs-accordion-active:border-green-500 hs-accordion-active:shadow-[0px_8px_20px_0px_rgba(0,0,0,0.1)]",
                         { active: idx == 0 }
                       )}
                       id={`faq-${idx}`}
                     >
                       <button
-                        className="hs-accordion-toggle inline-flex w-full items-center justify-between gap-x-3 px-6 py-4 text-left capitalize text-default-950 transition-all hs-accordion-active:bg-primary hs-accordion-active:text-white"
+                        // className="hs-accordion-toggle inline-flex w-full items-center justify-between gap-x-3 px-6 py-4 text-left capitalize text-default-950 transition-all hs-accordion-active:bg-primary hs-accordion-active:text-white"
+                        className="hs-accordion-toggle inline-flex w-full items-center justify-between gap-x-3 px-6 py-4 text-left capitalize text-default-950 transition-all hs-accordion-active:bg-green-500 hs-accordion-active:text-white"
                         aria-controls={`faq-accordion-${idx}`}
                       >
                         <h5 className="text-base font-semibold">{faq.title}</h5>
@@ -77,7 +79,7 @@ const FAQs = () => {
               </div>
             </div>
             <div className="lg:col-span-2">
-              <div className="rounded-lg bg-primary/10">
+              <div className="rounded-lg bg-green-600/5">
                 <div className="p-8">
                   <h4 className="mb-2 text-xl font-medium text-default-950">
                     Don’t find your answer, Ask for support.

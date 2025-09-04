@@ -13,13 +13,13 @@ import { GoBackButton } from "@/components";
 
 const Error404 = () => {
   return (
-    <section className="py-10">
+    <section className="py-10 bg-green-600/5">
       {/* 
          Used the below Title as a workout, as there's an open issue in Nextjs regarding metadata not working in not-found page.
          You can track the issue here: https://github.com/vercel/next.js/issues/45620 
         */}
       <title>
-        Not Found | Yum Nextjs - Multipurpose Food Tailwind CSS Template
+        Not Found | Taste 0f India
       </title>
 
       <div className="container">
@@ -50,7 +50,8 @@ const Error404 = () => {
                 <GoBackButton />
                 <Link
                   href="/"
-                  className="relative inline-flex w-1/2 items-center justify-center rounded-lg border border-primary px-6 py-3 text-base font-medium capitalize text-primary transition-all hover:bg-primary hover:text-white lg:w-2/6"
+                  // className="relative inline-flex w-1/2 items-center justify-center rounded-lg border border-primary px-6 py-3 text-base font-medium capitalize text-primary transition-all hover:bg-primary hover:text-white lg:w-2/6"
+                  className="relative inline-flex w-1/2 items-center justify-center rounded-lg border border-green-500 px-6 py-3 text-base font-medium capitalize text-green-500 transition-all hover:bg-green-500 hover:text-white lg:w-2/6"
                 >
                   Go To home
                 </Link>

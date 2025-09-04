@@ -16,7 +16,7 @@ const ProductsGrid = () => {
   return (
     <>
       <Breadcrumb title="Dishes" subtitle="Dishes" />
-      <section className="py-6 lg:py-8">
+      <section className="py-6 lg:py-8 bg-green-600/5">
         <div className="container">
           <div className="">
             <div className="gap-6 lg:flex">
@@ -48,9 +48,9 @@ const ProductsGrid = () => {
                   </div>
                 </div>
 
-                <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
-                  <div className="order-1 sm:col-span-2 xl:order-2">
-                    <div className="order-1 h-full sm:col-span-2 xl:order-2">
+                <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+                  <div className="order-1 sm:col-span-1 xl:order-1">
+                    <div className="order-1 h-full sm:col-span-2 xl:order-1">
                       <DiscountCard discount={"52% Discount"} link="/dishes-list" />
                     </div>
                   </div>

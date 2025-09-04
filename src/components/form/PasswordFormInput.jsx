@@ -43,7 +43,8 @@ const PasswordFormInput = ({
                 {...field}
                 type={showPassword ? "text" : "password"}
                 className={cn(
-                  "rounded-e-none rounded-s-lg border border-default-200 px-4 py-2.5 focus:border-primary dark:bg-default-50",
+                  // "rounded-e-none rounded-s-lg border border-default-200 px-4 py-2.5 focus:border-primary dark:bg-default-50",
+                  "rounded-e-none rounded-s-lg border border-default-200 bg-green-600/5 px-4 py-2.5 focus:border-primary dark:bg-default-50",
                   className,
                   fullWidth && "w-full",
                   {
@@ -60,7 +61,7 @@ const PasswordFormInput = ({
               )}
             </div>
             <button
-              className="password-toggle ms-[1px] inline-flex items-center justify-center rounded-e-lg border border-s-0 border-default-200 bg-white px-4 py-2.5 dark:bg-default-50"
+              className="password-toggle ms-[1px] inline-flex items-center justify-center rounded-e-lg border border-s-0 border-green-200 bg-green-600/5 px-4 py-2.5 dark:bg-default-50 dark:border-default-200"
               onClick={() => {
                 setShowPassword(!showPassword);
               }}

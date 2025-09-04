@@ -9,7 +9,7 @@ const Wishlist = () => {
   return (
     <>
       <Breadcrumb title="Wishlist" />
-      <section className="py-6 lg:py-10">
+      <section className="py-6 lg:py-10 bg-green-600/5">
         <div className="container">
           <div className="divide-y divide-default-200 overflow-hidden rounded-lg border border-default-200 ">
             <AllWishList />

@@ -44,7 +44,7 @@ const TextFormInput = ({
               {...field}
               id={id ?? name}
               className={cn(
-                "form-input rounded-lg border border-default-200 px-4 py-2.5 dark:bg-default-50",
+                "form-input rounded-lg border border-default-200 bg-green-600/5 px-4 py-2.5 dark:bg-default-50",
                 { "ps-10": startInnerIcon },
                 { "pe-14": endButtonIcon },
                 { "w-full": fullWidth },

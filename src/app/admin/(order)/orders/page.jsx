@@ -100,7 +100,7 @@ const OrderList = async() => {
                         {orderProgressData[status].map(async (order, index) => {
                           order.order = await getOrderById(order.order_id);
                           const dish = await getDishById(
-                            order.order?.dish_id ?? 0
+                            order?.order?.dish_id ?? 0
                           );
                           return (
                             <div

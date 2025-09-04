@@ -40,7 +40,8 @@ const OrderSummary = () => {
                   </h4>
                   <h4 className="text-sm text-default-600">
                     {quantity} x{" "}
-                    <span className="font-semibold text-primary">
+                    {/* <span className="font-semibold text-primary"> */}
+                    <span className="font-semibold text-green-500">
                       {currentCurrency}
                       {dish?.Selling_Price}
                       {/* {calculatedPrice(dish)} */}
@@ -97,7 +98,8 @@ const OrderSummary = () => {
         </div>
         <button
           type="submit"
-          className="inline-flex w-full items-center justify-center rounded-lg border border-primary bg-primary px-10 py-3 text-center text-sm font-medium text-white shadow-sm transition-all duration-500 hover:bg-primary-500"
+          // className="inline-flex w-full items-center justify-center rounded-lg border border-primary bg-primary px-10 py-3 text-center text-sm font-medium text-white shadow-sm transition-all duration-500 hover:bg-primary-500"
+          className="inline-flex w-full items-center justify-center rounded-lg border border-green-500 bg-green-500 px-10 py-3 text-center text-sm font-medium text-white shadow-sm transition-all duration-500 hover:bg-green-600"
         >
           Place Order
         </button>

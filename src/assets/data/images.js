@@ -151,12 +151,25 @@ import bubbleTeaIconCategoryImg from "@/assets/images/icons/category/bubble-tea.
 import burger1IconCategoryImg from "@/assets/images/icons/category/burger-1.svg";
 import burgerIconCategoryImg from "@/assets/images/icons/category/burger.svg";
 import cupIconCategoryImg from "@/assets/images/icons/category/cup.svg";
+import naanIconCategoryImg from "@/assets/images/icons/category/naan.svg";
+import tandooriIconCategoryImg from "@/assets/images/icons/category/tandoori.svg";
+import lambIconCategoryImg from "@/assets/images/icons/category/lamb.svg";
+import chickenIconCategoryImg from "@/assets/images/icons/category/chicken.svg";
+import beefIconCategoryImg from "@/assets/images/icons/category/beef.svg";
+import riceIconCategoryImg from "@/assets/images/icons/category/rice.svg";
+import seafoodIconCategoryImg from "@/assets/images/icons/category/seafood.svg";
+import vegetablesIconCategoryImg from "@/assets/images/icons/category/vegetables.svg";
+import comboplattersIconCategoryImg from "@/assets/images/icons/category/comboplatters.svg";
+import indiandessertsIconCategoryImg from "@/assets/images/icons/category/indiandesserts.svg";
+import indianpicklesIconCategoryImg from "@/assets/images/icons/category/indianpickles.svg";
+import beveragesIconCategoryImg from "@/assets/images/icons/category/beverages.svg";
+import sauceIconCategoryImg from "@/assets/images/icons/category/sauce.svg";
 import dessertIconCategoryImg from "@/assets/images/icons/category/dessert.svg";
 import gelatoIconCategoryImg from "@/assets/images/icons/category/gelato.svg";
 import noodlesIconCategoryImg from "@/assets/images/icons/category/noodles.svg";
 import pizzaSliceIconCategoryImg from "@/assets/images/icons/category/pizza-slice.svg";
 import pizzaIconCategoryImg from "@/assets/images/icons/category/pizza.svg";
-import seafoodIconCategoryImg from "@/assets/images/icons/category/seafood.svg";
+// import seafoodIconCategoryImg from "@/assets/images/icons/category/seafood.svg";
 import skewerIconCategoryImg from "@/assets/images/icons/category/skewer.svg";
 import tacoIconCategoryImg from "@/assets/images/icons/category/taco.svg";
 
@@ -350,7 +363,7 @@ export {
   noodlesIconCategoryImg,
   pizzaSliceIconCategoryImg,
   pizzaIconCategoryImg,
-  seafoodIconCategoryImg,
+  // seafoodIconCategoryImg,
   skewerIconCategoryImg,
   tacoIconCategoryImg,
   bagIconImg,
@@ -394,4 +407,17 @@ export {
   seller4Img,
   seller5Img,
   seller6Img,
+  naanIconCategoryImg,
+  tandooriIconCategoryImg,
+  lambIconCategoryImg,
+  chickenIconCategoryImg,
+  beefIconCategoryImg,
+  riceIconCategoryImg,
+  seafoodIconCategoryImg,
+  vegetablesIconCategoryImg,
+  comboplattersIconCategoryImg,
+  indiandessertsIconCategoryImg,
+  indianpicklesIconCategoryImg,
+  beveragesIconCategoryImg,
+  sauceIconCategoryImg,
 };

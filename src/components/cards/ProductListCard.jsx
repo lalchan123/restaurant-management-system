@@ -23,7 +23,8 @@ const ProductListCard = ({ dish }) => {
 
   // const discountedPrice = calculatedPrice(dish);
   return (
-    <div className="rounded-lg border border-default-200 p-4 transition-all duration-300 hover:border-primary dark:hover:shadow-[0px_0px_16px_0px_rgba(245,130,32,0.50)]">
+    // <div className="rounded-lg border border-default-200 p-4 transition-all duration-300 hover:border-primary dark:hover:shadow-[0px_0px_16px_0px_rgba(245,130,32,0.50)]">
+    <div className="rounded-lg border border-default-200 p-4 transition-all duration-300 hover:border-green-500 dark:hover:shadow-[0px_0px_16px_0px_rgba(245,130,32,0.50)]">
       <div className="relative flex flex-col justify-center gap-4 md:flex-row md:items-center">
         <div className="shrink-0">
           <div className="mx-auto mb-4">
@@ -58,7 +59,8 @@ const ProductListCard = ({ dish }) => {
                 <ProductQuantityToggler dish={dish} size="medium" />
               </div>
               <div className="flex items-center gap-4">
-                <h4 className="text-lg font-semibold text-primary sm:text-2xl">
+                {/* <h4 className="text-lg font-semibold text-primary sm:text-2xl"> */}
+                <h4 className="text-lg font-semibold text-green-500 sm:text-2xl">
                   {currentCurrency}
                   {dish?.Selling_Price}{" "}
                   {dish?.Cost_Price && (

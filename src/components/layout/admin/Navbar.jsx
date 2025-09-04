@@ -14,14 +14,14 @@ const MenuAdmin = () => {
   return (
     <div
       id="application-sidebar"
-      className="hs-overlay fixed inset-y-0 start-0 z-60 hidden w-64 -translate-x-full transform overflow-y-auto border-e border-default-200 bg-white transition-all duration-300 hs-overlay-open:translate-x-0 dark:bg-default-50 lg:bottom-0 lg:right-auto lg:block lg:translate-x-0"
+      className="hs-overlay fixed inset-y-0 start-0 z-60 hidden w-64 -translate-x-full transform overflow-y-auto border-e border-default-200 bg-green-600/5 transition-all duration-300 hs-overlay-open:translate-x-0 dark:bg-default-50 lg:bottom-0 lg:right-auto lg:block lg:translate-x-0"
     >
       <div className="sticky top-0 flex h-18 items-center justify-center border-b border-dashed border-default-200 px-6">
         <Link href="/home">
           <Image
             src={logoDarkImg}
-            height={40}
-            width={130}
+            height={200}
+            width={200}
             alt="logo"
             className="flex h-10 dark:hidden"
             placeholder="blur"
@@ -29,8 +29,8 @@ const MenuAdmin = () => {
           />
           <Image
             src={logoLightImg}
-            height={40}
-            width={130}
+            height={200}
+            width={200}
             alt="logo"
             className="hidden h-10 dark:flex"
             placeholder="blur"
@@ -44,7 +44,7 @@ const MenuAdmin = () => {
       </SimplebarReactClient>
 
       <ul className="admin-menu flex flex-col gap-2 px-4 pt-10">
-        <li className="menu-item">
+        {/* <li className="menu-item">
           <div
             style={{ backgroundImage: `url(${offerBgOtherImg.src})` }}
             className="flex flex-col items-center rounded-md bg-primary/5 bg-cover bg-no-repeat p-4 text-center text-sm text-default-700"
@@ -59,7 +59,7 @@ const MenuAdmin = () => {
               Contact Support
             </button>
           </div>
-        </li>
+        </li> */}
 
         <li className="menu-item">
           <Link

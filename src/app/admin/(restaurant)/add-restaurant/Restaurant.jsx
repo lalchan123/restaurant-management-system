@@ -25,7 +25,8 @@ const Restaurant = () => {
         >
             <button
               type="button"
-              className="active flex w-full justify-center rounded-lg bg-primary/10 px-20 py-3 text-center text-sm font-medium text-primary hs-tab-active:bg-primary hs-tab-active:text-white sm:w-auto"
+              // className="active flex w-full justify-center rounded-lg bg-primary/10 px-20 py-3 text-center text-sm font-medium text-primary hs-tab-active:bg-primary hs-tab-active:text-white sm:w-auto"
+              className="active flex w-full justify-center rounded-lg bg-green-500/10 px-20 py-3 text-center text-sm font-medium text-green-500 hs-tab-active:bg-green-600 hs-tab-active:text-white sm:w-auto"
               data-hs-tab="#tabPersonalDetail"
               aria-controls="tabPersonalDetail"
               role="tab"
@@ -34,7 +35,8 @@ const Restaurant = () => {
             </button>
             <button
               type="button"
-              className="flex w-full justify-center rounded-lg bg-primary/10 px-20 py-3 text-center text-sm font-medium text-primary hs-tab-active:bg-primary hs-tab-active:text-white sm:w-auto"
+              // className="flex w-full justify-center rounded-lg bg-primary/10 px-20 py-3 text-center text-sm font-medium text-primary hs-tab-active:bg-primary hs-tab-active:text-white sm:w-auto"
+              className="flex w-full justify-center rounded-lg bg-green-500/10 px-20 py-3 text-center text-sm font-medium text-green-500 hs-tab-active:bg-green-600 hs-tab-active:text-white sm:w-auto"
               data-hs-tab="#tabBusinessDetail"
               aria-controls="tabBusinessDetail"
               role="tab"
@@ -43,7 +45,8 @@ const Restaurant = () => {
             </button>
             <button
               type="button"
-              className="flex w-full justify-center rounded-lg bg-primary/10 px-20 py-3 text-center text-sm font-medium text-primary hs-tab-active:bg-primary hs-tab-active:text-white sm:w-auto"
+              // className="flex w-full justify-center rounded-lg bg-primary/10 px-20 py-3 text-center text-sm font-medium text-primary hs-tab-active:bg-primary hs-tab-active:text-white sm:w-auto"
+              className="flex w-full justify-center rounded-lg bg-green-500/10 px-20 py-3 text-center text-sm font-medium text-green-500 hs-tab-active:bg-green-600 hs-tab-active:text-white sm:w-auto"
               data-hs-tab="#tabBankDetail"
               aria-controls="tabBankDetail"
               role="tab"

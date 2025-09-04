@@ -7,8 +7,10 @@ const BackToTop = dynamic(() => import("@/components/layout/BackToTop"), {
 
 const Layout = ({ children }) => {
   return (
-    <div className="bg-gradient-to-b from-primary/5 via-primary/5 to-primary/10">
-      <div className="relative flex items-center bg-gradient-to-b from-primary/5 via-primary/5 to-primary/10 py-8 sm:py-16 md:h-screen md:py-36">
+    // <div className="bg-gradient-to-b from-primary/5 via-primary/5 to-primary/10">
+    <div className="bg-gradient-to-b from-green-500/5 via-green-500/5 to-green-500/10">
+      {/* <div className="relative flex items-center bg-gradient-to-b from-primary/5 via-primary/5 to-primary/10 py-8 sm:py-16 md:h-screen md:py-36"> */}
+      <div className="relative flex items-center bg-gradient-to-b from-green-500/5 via-green-500/5 to-green-500/10 py-8 sm:py-16 md:h-screen md:py-36">
         <div className="container">{children}</div>
 
         <div>

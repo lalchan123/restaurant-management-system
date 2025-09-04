@@ -56,7 +56,8 @@ const ContactForm = () => {
       <div>
         <button
           type="submit"
-          className="flex w-full justify-center rounded-lg bg-primary px-10 py-2.5 text-center font-medium text-white transition-all hover:bg-primary-500"
+          // className="flex w-full justify-center rounded-lg bg-primary px-10 py-2.5 text-center font-medium text-white transition-all hover:bg-primary-500"
+          className="flex w-full justify-center rounded-lg bg-green-500 px-10 py-2.5 text-center font-medium text-white transition-all hover:bg-green-600"
         >
           Contact us
         </button>

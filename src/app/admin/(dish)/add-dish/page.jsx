@@ -8,7 +8,7 @@ export const metadata = {
 
 const AddProduct = () => {
   return (
-    <div className="w-full lg:ps-64">
+    <div className="w-full lg:ps-64 bg-green-600/5">
       <div className="page-content space-y-6 p-6">
         <BreadcrumbAdmin title="Add Dish" subtitle="Dishes" />
         <div className="grid gap-6 xl:grid-cols-3">

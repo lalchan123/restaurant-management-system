@@ -24,12 +24,12 @@ const ProductGridCard = ({ dish }) => {
   // const discountedPrice = calculatedPrice(dish);
 
   return (
-    <div className="order-3 overflow-hidden rounded-lg border border-default-200 p-4 transition-all duration-300 hover:border-primary hover:shadow-xl">
+    <div className="order-2 overflow-hidden rounded-lg border border-default-200 p-4 transition-all duration-300 hover:border-green-500 hover:shadow-xl h-50 flex flex-row gap-1">
       <div className="group relative divide-y divide-default-200 overflow-hidden rounded-lg">
         <div className="mx-auto mb-4">
           <Image
-            width={339}
-            height={263}
+            width={290}
+            height={190}
             src={`${BaseURL}${dish?.main_image_path}`}
             alt={dish?.Product_Name}
             className="h-full w-full transition-all group-hover:scale-105"

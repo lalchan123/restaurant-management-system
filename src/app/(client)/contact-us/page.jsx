@@ -13,7 +13,7 @@ const ContactUs = () => {
   return (
     <>
       <Breadcrumb title="Contact us" />
-      <section className="py-6 lg:py-16">
+      <section className="py-6 lg:py-16 bg-green-600/5">
         <div className="container">
           <div className="grid gap-10 lg:grid-cols-5">
             <div className="lg:col-span-2">
@@ -38,7 +38,7 @@ const ContactUs = () => {
           </div>
         </div>
       </section>
-      <section className="py-6 lg:py-16">
+      <section className="py-6 lg:py-16 bg-green-600/5">
         <div className="container">
           <div className="grid gap-6 lg:grid-cols-3">
             <div className="rounded-lg bg-default-400/10">

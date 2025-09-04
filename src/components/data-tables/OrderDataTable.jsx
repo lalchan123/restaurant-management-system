@@ -50,7 +50,7 @@ const OrderDataTable = ({ rows, columns, title }) => {
                   // const dish = row.dish;
                   return (
                     <tr key={idx}>
-                     {columns.map((column, idx) => {
+                     {columns?.map((column, idx) => {
                         if (column.key == "Status") {
                           const tableData = row[column.key];
                           const colorClassName =

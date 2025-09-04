@@ -3,7 +3,8 @@ import { LuChevronRight, LuHome } from "react-icons/lu";
 
 const Breadcrumb = ({ title, subtitle }) => {
   return (
-    <section className="hidden h-14 items-center bg-default-400/10 lg:flex">
+    // <section className="hidden h-14 items-center bg-default-400/10 lg:flex">
+    <section className="hidden h-14 items-center bg-green-600/5 lg:flex">
       <div className="container">
         <div className="flex items-center">
           <ol
@@ -12,7 +13,8 @@ const Breadcrumb = ({ title, subtitle }) => {
           >
             <li className="text-sm">
               <Link
-                className="flex items-center gap-2 align-middle leading-none text-default-800 transition-all hover:text-primary-500"
+                // className="flex items-center gap-2 align-middle leading-none text-default-800 transition-all hover:text-primary-500"
+                className="flex items-center gap-2 align-middle leading-none text-default-800 transition-all hover:text-green-500"
                 href="/home"
               >
                 <LuHome size={16} />
@@ -23,7 +25,8 @@ const Breadcrumb = ({ title, subtitle }) => {
             {subtitle && (
               <li className="text-sm">
                 <Link
-                  className="flex items-center gap-2 align-middle leading-none text-default-800 transition-all hover:text-primary-500"
+                  // className="flex items-center gap-2 align-middle leading-none text-default-800 transition-all hover:text-primary-500"
+                  className="flex items-center gap-2 align-middle leading-none text-default-800 transition-all hover:text-green-500"
                   href=""
                 >
                   {subtitle}
@@ -33,7 +36,8 @@ const Breadcrumb = ({ title, subtitle }) => {
             )}
             <li
               aria-current="page"
-              className="cursor-pointer truncate text-sm font-medium text-primary hover:text-primary-500"
+              // className="cursor-pointer truncate text-sm font-medium text-primary hover:text-primary-500"
+              className="cursor-pointer truncate text-sm font-medium text-green-600 hover:text-green-500"
             >
               {title}
             </li>

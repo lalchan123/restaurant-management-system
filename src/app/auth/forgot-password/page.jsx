@@ -9,7 +9,8 @@ export const metadata = {
 const BottomLink = () => (
   <p className="mt-auto text-center text-default-950">
     Back to{" "}
-    <Link href="/auth/login" className="ms-1 text-primary">
+    {/* <Link href="/auth/login" className="ms-1 text-primary"> */}
+    <Link href="/auth/login" className="ms-1 text-green-500">
       <span className="font-medium">Login</span>
     </Link>
   </p>

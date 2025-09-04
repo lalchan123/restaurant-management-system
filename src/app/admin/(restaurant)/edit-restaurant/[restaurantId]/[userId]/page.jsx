@@ -14,7 +14,7 @@ const EditRestaurant = async ({ params }) => {
   if (!restaurantData) notFound();
 
   return (
-    <div className="w-full lg:ps-64">
+    <div className="w-full lg:ps-64 bg-green-600/5">
       <div className="page-content space-y-6 p-6">
         <BreadcrumbAdmin
           title="Edit Restaurant"

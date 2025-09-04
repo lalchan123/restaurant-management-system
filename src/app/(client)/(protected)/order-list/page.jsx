@@ -10,7 +10,7 @@ const OrderList = () => {
   return (
     <>
       <Breadcrumb title="OrderList" subtitle="Order" />
-      <section className="py-6 lg:py-10">
+      <section className="py-6 lg:py-10 bg-green-600/5">
         <div className="container">
           <ClientOrderListPage />
         </div>

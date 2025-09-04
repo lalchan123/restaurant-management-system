@@ -44,8 +44,10 @@ const ProductPagination = () => {
             onClick={() => typeof page === "number" && goToPage(page)}
             className={`inline-flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border transition-all duration-300 ${
               page === currentPage
-                ? "border-primary bg-primary text-white"
+                ? "border-green-500 bg-green-500 text-white"
                 : "bg-default-100 text-default-800 hover:border-primary hover:bg-primary hover:text-white"
+                // ? "border-primary bg-primary text-white"
+                // : "bg-default-100 text-default-800 hover:border-primary hover:bg-primary hover:text-white"
             }`}
           >
             {page}
@@ -66,7 +68,8 @@ const ProductPagination = () => {
             <li>
               <span
                 onClick={() => goToPage(currentPage - 1)}
-                className="inline-flex h-9 w-9 cursor-pointer items-center justify-center rounded-full bg-default-100 text-default-800 transition-all duration-500 hover:border-primary hover:bg-primary hover:text-white"
+                // className="inline-flex h-9 w-9 cursor-pointer items-center justify-center rounded-full bg-default-100 text-default-800 transition-all duration-500 hover:border-primary hover:bg-primary hover:text-white"
+                className="inline-flex h-9 w-9 cursor-pointer items-center justify-center rounded-full bg-default-100 text-default-800 transition-all duration-500 hover:border-green-500 hover:bg-green-500 hover:text-white"
               >
                 <LuChevronLeft size={20} />
               </span>
@@ -74,7 +77,8 @@ const ProductPagination = () => {
             <li>
               <span
                 onClick={() => goToPage(currentPage + 1)}
-                className="inline-flex h-9 w-9 cursor-pointer items-center justify-center rounded-full bg-default-100 text-default-800 transition-all duration-500 hover:border-primary hover:bg-primary hover:text-white"
+                className="inline-flex h-9 w-9 cursor-pointer items-center justify-center rounded-full bg-default-100 text-default-800 transition-all duration-500 hover:border-green-500 hover:bg-green-500 hover:text-white"
+                // className="inline-flex h-9 w-9 cursor-pointer items-center justify-center rounded-full bg-default-100 text-default-800 transition-all duration-500 hover:border-primary hover:bg-primary hover:text-white"
               >
                 <LuChevronRight size={20} />
               </span>

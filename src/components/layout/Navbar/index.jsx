@@ -40,7 +40,7 @@ const Navbar = () => {
       <OfferAdBanner />
 
       <StickyHeader>
-        <div className="flex h-14 items-center lg:h-20">
+        <div className="flex h-14 items-center lg:h-20 bg-green-600/5">
           <div className="container">
             <div className="grid grid-cols-2 items-center gap-4 lg:grid-cols-3">
               <div className="flex">
@@ -58,8 +58,8 @@ const Navbar = () => {
                 <Link href="/">
                   <Image
                     src={logoDarkImg}
-                    height={40}
-                    width={130}
+                    height={250}
+                    width={250}
                     alt="logo"
                     className="flex h-10 dark:hidden"
                     placeholder="blur"
@@ -67,8 +67,8 @@ const Navbar = () => {
                   />
                   <Image
                     src={logoLightImg}
-                    height={40}
-                    width={130}
+                    height={500}
+                    width={600}
                     alt="logo"
                     className="hidden h-10 dark:flex"
                     placeholder="blur"

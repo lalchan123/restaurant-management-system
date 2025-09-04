@@ -16,7 +16,7 @@ const ProductList = () => {
   return (
     <>
       <Breadcrumb title="Dishes List" subtitle="Dishes List" />
-      <section className="py-10">
+      <section className="py-10 bg-green-600/5">
         <div className="container">
           <div className="gap-6 lg:flex">
             <MegaProductFilter />

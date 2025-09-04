@@ -81,14 +81,16 @@ const RestaurantListCard = async ({ restaurant, table_ref_id_data, user_id_data 
       )} */}
       <div className="mb-8 flex justify-around">
         <div className="text-center">
-          <h4 className="mb-2.5 text-lg font-medium text-primary">
+          {/* <h4 className="mb-2.5 text-lg font-medium text-primary"> */}
+          <h4 className="mb-2.5 text-lg font-medium text-green-500">
             {response_data?.data?.total_products}
           </h4>
           <h5 className="text-sm text-default-800">Total Product</h5>
         </div>
         <div className="border-s border-default-200" />
         <div className="text-center">
-          <h4 className="mb-2.5 text-lg font-medium text-primary">
+          {/* <h4 className="mb-2.5 text-lg font-medium text-primary"> */}
+          <h4 className="mb-2.5 text-lg font-medium text-green-500">
             {response_data?.data?.total_sales}
           </h4>
           <h5 className="text-sm text-default-800">Total Sales</h5>
@@ -117,13 +119,14 @@ const RestaurantListCard = async ({ restaurant, table_ref_id_data, user_id_data 
       <div className="text-center">
         <Link
           href={`/admin/restaurants/${table_ref_id}`}
-          className="inline-flex rounded-lg bg-primary px-6 py-2.5 font-medium text-white transition-all hover:bg-primary-500"
+          // className="inline-flex rounded-lg bg-primary px-6 py-2.5 font-medium text-white transition-all hover:bg-primary-500"
+          className="inline-flex rounded-lg bg-green-500 px-6 py-2.5 font-medium text-white transition-all hover:bg-green-600"
         >
           View Details
         </Link>
         <Link
           href={`/admin/edit-restaurant/${table_ref_id}/${user_id}`}
-          className="inline-flex rounded-lg bg-primary px-6 py-2.5 ml-3 font-medium text-white transition-all hover:bg-primary-500"
+          className="inline-flex rounded-lg bg-green-500 px-6 py-2.5 ml-3 font-medium text-white transition-all hover:bg-green-600"
         >
           Edit Details
         </Link>

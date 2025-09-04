@@ -49,7 +49,8 @@ const CartTotal = () => {
       </div>
       <Link
         href="/checkout"
-        className="inline-flex w-full items-center justify-center rounded-lg border border-primary bg-primary px-10 py-3 text-center text-sm font-medium text-white shadow-sm transition-all duration-500 hover:bg-primary-500"
+        // className="inline-flex w-full items-center justify-center rounded-lg border border-primary bg-primary px-10 py-3 text-center text-sm font-medium text-white shadow-sm transition-all duration-500 hover:bg-primary-500"
+        className="inline-flex w-full items-center justify-center rounded-lg border border-green-500 bg-green-500 px-10 py-3 text-center text-sm font-medium text-white shadow-sm transition-all duration-500 hover:bg-green-600"
       >
         Proceed to Checkout
       </Link>

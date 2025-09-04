@@ -12,7 +12,7 @@ const Cart = () => {
   return (
     <>
       <Breadcrumb title="Cart" />
-      <section className="py-6 lg:py-10">
+      <section className="py-6 lg:py-10 bg-green-600/5">
         <div className="container">
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
             <div className="col-span-1 lg:col-span-2">
@@ -67,7 +67,8 @@ const Cart = () => {
                   <div className="flex flex-wrap items-center justify-between gap-2">
                     <Link
                       href="/dishes"
-                      className="inline-flex items-center justify-center rounded-lg border border-primary px-5 py-3 text-center text-sm font-medium text-primary shadow-sm transition-all duration-500 hover:bg-primary hover:text-white"
+                      // className="inline-flex items-center justify-center rounded-lg border border-primary px-5 py-3 text-center text-sm font-medium text-primary shadow-sm transition-all duration-500 hover:bg-primary hover:text-white"
+                      className="inline-flex items-center justify-center rounded-lg border border-green-500 px-5 py-3 text-center text-sm font-medium text-green-500 shadow-sm transition-all duration-500 hover:bg-green-500 hover:text-white"
                     >
                       Shop More
                     </Link>
