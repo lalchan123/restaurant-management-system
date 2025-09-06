@@ -8,6 +8,7 @@ const ProductQuantityToggler = ({ dish, size = "small" }) => {
   const {
     addToCart,
     removeFromCart,
+    removeAllCart,
     isInCart,
     updateQuantityForDish,
     getCartItemById,

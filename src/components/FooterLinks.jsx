@@ -28,13 +28,27 @@ const FooterLinks = () => {
 
               <div className="flex flex-col gap-3">
                 <h5 className="mb-3 font-semibold text-default-950">
+                  Working Hours
+                </h5>
+                <div className="text-default-600">
+                  <div className="font-semibold text-default-600">Every Day</div>
+                  <p>11:00 AM - 02:30 PM and</p>
+                  <p>05:00 PM - 09:00 PM</p>
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-3">
+                <h5 className="mb-3 font-semibold text-default-950">
                   Get in touch
                 </h5>
                 <div className="text-default-600">
-                  <Link href="tel:+1234567891012">(+123) 456 789 123</Link>
+                  <p>1925 N Central Expy, McKinney, TX 75070</p>
                 </div>
                 <div className="text-default-600">
-                  <Link href="mailto:example@mail.com">example@mail.com</Link>
+                  <Link href="tel:+1234567891012">972-548-0200</Link>
+                </div>
+                <div className="text-default-600">
+                  <Link href="mailto:mypoolhub@gmail.com">mypoolhub@gmail.com</Link>
                 </div>
                 <div className="flex items-center gap-4">
                   {[LuPhone, LuFacebook, LuInstagram, FaXTwitter].map(

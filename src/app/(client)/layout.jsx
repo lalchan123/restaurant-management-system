@@ -1,4 +1,5 @@
 import { Footer, FooterLinks, Navbar } from "@/components";
+import { useShoppingContext } from "@/context";
 
 const Layout = ({ children }) => {
   return (

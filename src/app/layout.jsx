@@ -13,6 +13,9 @@ const BackToTop = dynamic(() => import("@/components/layout/BackToTop"), {
 // styles
 import "../assets/css/style.css";
 import { Footer, FooterLinks, Navbar } from "@/components";
+import CartResetter from "@/ApiCallMethod/CartResetter";
+import AutoLogout from "@/ApiCallMethod/AutoLogout";
+
 
 const APP_NAME = "Taste of India";
 const APP_DEFAULT_TITLE =
@@ -104,6 +107,7 @@ const splashScreenStyles = `
 `;
 
 export default function RootLayout({ children }) {
+  
   return (
     <html lang="en">
       <head>
@@ -138,6 +142,8 @@ export default function RootLayout({ children }) {
           <AppProvidersWrapper>
             {children}
             <BackToTop />
+            <CartResetter />
+            <AutoLogout />
             <Toaster richColors position="top-right" />
           </AppProvidersWrapper>
         </div>

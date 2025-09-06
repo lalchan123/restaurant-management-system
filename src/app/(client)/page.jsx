@@ -321,7 +321,7 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-              <div className="mt-10 flex flex-wrap items-center justify-center gap-4 md:justify-start">
+              {/* <div className="mt-10 flex flex-wrap items-center justify-center gap-4 md:justify-start">
                 <div className="flex items-center gap-2">
                   <Image
                     src={avatar3Img}
@@ -339,7 +339,7 @@ const Home = () => {
                     </p>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -347,59 +347,7 @@ const Home = () => {
 
       <SpecialMenu />
 
-      <section className="py-6 lg:py-16 bg-green-600/5">
-        <div className="container">
-          <div className="grid grid-cols-1 items-center gap-20 lg:grid-cols-2">
-            <div>
-              <div className="relative">
-                <Image
-                  src={testimonialHomeImg}
-                  className="mx-auto lg:mx-0"
-                  alt="testimonial"
-                />
-                <div className="absolute -bottom-10 end-20">
-                  <div className="rounded-xl bg-white shadow-lg dark:bg-default-100">
-                    <div className="p-6">
-                      <h6 className="mb-2 text-base font-semibold text-default-900">
-                        Our Reviewers
-                      </h6>
-                      <div className="flex items-center justify-center -space-x-1">
-                        <div className="h-12 w-12">
-                          <Image
-                            src={avatar1Img}
-                            className="h-full w-full rounded-full object-cover object-center ring ring-default-100"
-                            alt="avatar"
-                          />
-                        </div>
-                        <div className="h-12 w-12">
-                          <Image
-                            src={avatar2Img}
-                            className="h-full w-full rounded-full object-cover object-center ring ring-default-100"
-                            alt="avatar"
-                          />
-                        </div>
-                        <div className="h-12 w-12">
-                          <Image
-                            src={avatar3Img}
-                            className="h-full w-full rounded-full object-cover object-center ring ring-default-100"
-                            alt="avatar"
-                          />
-                        </div>
-                        {/* <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-primary font-medium text-default-50 ring ring-default-100"> */}
-                        <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-green-500 font-medium text-default-50 ring ring-default-100">
-                          <span className="text-base"> 12K </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <TestimonialsSwiper reviews={consumerReviews} />
-          </div>
-        </div>
-      </section>
+    
 
       {/* <section
         style={{ backgroundImage: `url(${offerBgHomeImg.src})` }}

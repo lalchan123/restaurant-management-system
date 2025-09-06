@@ -13,12 +13,16 @@ import {
   categoriesData,
   dishesData,
 } from "@/assets/data";
+// import AutoLogout from "@/ApiCallMethod/AutoLogout";
 
 export const metadata = {
   title: "Dashboard",
 };
 
 const Dashboard = () => {
+
+  // AutoLogout();
+
   const columns = [
     {
       key: "id",

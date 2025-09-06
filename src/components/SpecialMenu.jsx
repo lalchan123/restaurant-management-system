@@ -82,14 +82,14 @@ const SpecialMenu = () => {
                   role="tablist"
                   data-hs-tabs-vertical="true"
                 >
-                  {categoriesData.map((category) => (
+                  {categoriesData?.map((category) => (
                     <button
                       type="button"
                       role="tab"
                       key={category.id}
                       className={cn(
                         "flex p-1",
-                        selectedCategory == category.name && "active"
+                        selectedCategory == category?.name && "active"
                       )}
                       id={category.name + "-menu-toggle"}
                       data-hs-tab={"#" + category.name + "-menu"}
@@ -97,9 +97,9 @@ const SpecialMenu = () => {
                       onClick={() => setSelectedCategory(category.name)}
                     >
                       {/* <span className="flex w-full items-center justify-start gap-4 rounded-full p-2 pe-6 text-default-900 transition-all hover:text-primary hs-tab-active:bg-primary xl:w-2/3"> */}
-                      <span className="flex w-full items-center justify-start gap-4 rounded-full p-2 pe-6 text-default-900 transition-all hover:text-green-500 hs-tab-active:bg-green-500 xl:w-2/3">
+                      <span className="flex w-full items-center justify-start gap-2 rounded-full p-2 pe-4 text-default-900 transition-all hover:text-green-500 hs-tab-active:bg-green-500 xl:w-2.1/3">
                         <div>
-                          <span className="inline-flex h-14 w-14 grow items-center justify-center rounded-full hs-tab-active:bg-white">
+                          <span className="inline-flex h-8 w-14 grow items-center justify-center rounded-full hs-tab-active:bg-white">
                             <Image
                               src={category.image}
                               height={32}
@@ -109,7 +109,7 @@ const SpecialMenu = () => {
                             />
                           </span>
                         </div>
-                        <span className="shrink text-base font-medium hs-tab-active:text-white">
+                        <span className="shrink text-base font-small hs-tab-active:text-white">
                           {category.name}
                         </span>
                       </span>
