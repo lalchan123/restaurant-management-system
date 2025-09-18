@@ -10,7 +10,7 @@ import { useState } from "react";
 import axios from 'axios';
 
 import path from 'path';
-import { BaseURL } from "@/ApiCallMethod/Constants";
+import { BaseURL, BaseURL1 } from "@/ApiCallMethod/Constants";
 
 
 // Register the plugins
@@ -51,9 +51,12 @@ const DishUploader = async() => {
   //   console.log("51");
   //   const formData = new FormData();
   //   formData.append('file', file, file.name);
+  //   // formData.append('file', file);
+  //   // formData.append('file', file.files[0]);
   //   console.log("53 file", file);
-  //   // fetch(`${BaseURL}/course/upload_image_react_file_pond_apiview/`, {
-  //   fetch(`https://tasteofindiamckinney.net/course/upload_image_react_file_pond_apiview/`, {
+  //   fetch(`${BaseURL}/course/upload_image_react_file_pond_apiview/`, {
+  //   // fetch(`http://localhost:8000/account/upload_image_apiview/`, {
+  //   // fetch(`https://tasteofindiamckinney.net/course/upload_image_react_file_pond_apiview/`, {
   //   // fetch(`http://38.107.232.191:8000/course/upload_image_react_file_pond_apiview/`, {
   //     method: 'POST',
   //     body: formData,
@@ -100,14 +103,37 @@ const DishUploader = async() => {
       }
     })
     .then(res => {
-      console.log("Upload success:", res.data);
-      load(res.data.filePath);
+      console.log("106 MainImagePath Upload success:", res.data);
+      localStorage.setItem("MainImagePath", res.data.filePath);
+      // load(res.data.filePath);
+
     })
     .catch(err => {
       console.error("Upload error:", err.message);
       error("Upload failed. Please check your internet or server.");
     });
   };
+
+
+  // const handleProcessMainImage = (fieldName, file, metadata, load, error, progress, abort) => {
+  //   const formData = new FormData();
+  //   formData.append("file", file, file.name);
+
+  //   axios.post(`${BaseURL1}/course/upload_image_react_file_pond_apiview/`, formData, {
+  //     headers: { "Content-Type": "multipart/form-data" },
+  //     onUploadProgress: (e) => {
+  //       progress(e.lengthComputable, e.loaded, e.total);
+  //     }
+  //   })
+  //   .then(res => {
+  //     console.log("Upload success:", res.data);
+  //     load(res.data.filePath);
+  //   })
+  //   .catch(err => {
+  //     console.error("Upload error:", err.message);
+  //     error("Upload failed. Please check your internet or server.");
+  //   });
+  // };
 
 
   // const handleProcessMainImage = (fieldName, file, metadata, load, error, progress, abort) => {
@@ -232,34 +258,57 @@ const DishUploader = async() => {
   //   };
   // };
 
+  // const handleProcessAdditionImage = (fieldName, file, metadata, load, error, progress, abort) => {
+  //   const formData = new FormData();
+  //   // additionImage.forEach(fileItem => {
+  //   //   formData.append('file', fileItem.file); // 'images' is the field name in your API
+  //   // });
+  //   formData.append('file', file, file.name);
+
+
+  //   fetch(`${BaseURL}/course/upload_image_react_file_pond_apiview/`, {
+  //     method: 'POST',
+  //     body: formData,
+  //   })
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       console.log("data.filePath", data.filePath);
+  //       localStorage.setItem("MainImagePath", data.filePath)
+  //     })
+  //     .catch(err => {
+  //       console.error('Upload error:', err);
+  //       error('Upload failed');
+  //     });
+
+  //   return {
+  //     abort: () => {
+  //       abort();
+  //     },
+  //   };
+  // };
+
   const handleProcessAdditionImage = (fieldName, file, metadata, load, error, progress, abort) => {
     const formData = new FormData();
-    // additionImage.forEach(fileItem => {
-    //   formData.append('file', fileItem.file); // 'images' is the field name in your API
-    // });
-    formData.append('file', file, file.name);
+    formData.append("file", file, file.name);
 
-
-    fetch(`${BaseURL}/course/upload_image_react_file_pond_apiview/`, {
-      method: 'POST',
-      body: formData,
+    axios.post(`${BaseURL}/course/upload_image_react_file_pond_apiview/`, formData, {
+      headers: { "Content-Type": "multipart/form-data" },
+      onUploadProgress: (e) => {
+        progress(e.lengthComputable, e.loaded, e.total);
+      }
     })
-      .then(res => res.json())
-      .then(data => {
-        console.log("data.filePath", data.filePath);
-        localStorage.setItem("MainImagePath", data.filePath)
-      })
-      .catch(err => {
-        console.error('Upload error:', err);
-        error('Upload failed');
-      });
-
-    return {
-      abort: () => {
-        abort();
-      },
-    };
+    .then(res => {
+      console.log("301 AdditionalImagePath Upload success:", res.data);
+      localStorage.setItem("AdditionalImagePath", res.data.filePath);
+      // load(res.data.filePath);
+    })
+    .catch(err => {
+      console.error("Upload error:", err.message);
+      error("Upload failed. Please check your internet or server.");
+    });
   };
+
+
 
   return (
     <div className="rounded-lg border border-default-200 p-6">

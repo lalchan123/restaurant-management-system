@@ -80,7 +80,36 @@ const PersonalDetailForm = () => {
 
   console.log("81 profileImage", profileImage);
   console.log("82 profileImage[0].file", profileImage[0]?.file);
+  // console.log("83 profileImage.files[0]", profileImage.files[0]);
   // console.log("82 URL.createObjectURL(profileImage[0].file)", URL?.createObjectURL(profileImage[0]?.file));
+
+  const onSubmit = async (data) => {
+    console.log("32 Data:", data);
+    console.log("87 profileImage:", profileImage);
+    const formData = new FormData();
+    formData.append("file", profileImage[0]?.file);
+
+    // fetch("http://127.0.0.1:8000/account/upload_image_apiview/", {
+    //   method: "POST",
+    //   body: formData
+    // });
+     try {
+    const res = await fetch("http://127.0.0.1:8000/account/upload_image_apiview/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (!res.ok) throw new Error("Request failed");
+    const result = await res.json();
+    console.log(result);
+  } catch (err) {
+    console.error("Error:", err);
+  }
+               
+  }
 
   return (
     <div className="mb-6 rounded-lg border border-default-200 p-6">
@@ -127,7 +156,7 @@ const PersonalDetailForm = () => {
           </div>
           <div className="xl:col-span-4">
             <form
-              onSubmit={handleSubmit(() => {})}
+              onSubmit={handleSubmit(onSubmit)}
               className="grid gap-6 lg:grid-cols-2"
             >
               <TextFormInput

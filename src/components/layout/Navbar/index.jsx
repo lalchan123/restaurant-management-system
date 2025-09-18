@@ -33,8 +33,8 @@ const StickyHeader = dynamic(() => import("@/components/StickyHeader"), {
 const Navbar = () => {
   
   const { data: session } = useSession();
-  // console.log("session?.user?.data[0]?.user_id;", session?.user?.data[0]?.user_id;)
-  console.log("session?.user?.data[0]", session?.user?.data[0])
+  // console.log("session?.user?.data[0]?.user_id;", session?.user?.data[0]?.user_id)
+  console.log("session?.user?.data[0]", session?.user)
   return (
     <>
       <OfferAdBanner />
@@ -104,7 +104,10 @@ const Navbar = () => {
                     </div>
                     <div className="hs-dropdown-menu z-20 mt-4 hidden min-w-[200px] rounded-lg border border-default-100 bg-white p-1.5 opacity-0 shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px] transition-[opacity,margin] hs-dropdown-open:opacity-100 dark:bg-default-50">
                       {
-                          session?.user?.data[0]?.user_role_type === 'user' ? 
+                          // session?.user?.data[0]?.user_role_type === 'user' ? 
+                          session?.user?.data && session.user.data.length > 0 
+                            ? session.user.data[0]?.user_role_type 
+                            : null === 'user' ? 
                             <ul className="flex flex-col gap-1">
                               <li>
                                 <Link
@@ -170,7 +173,10 @@ const Navbar = () => {
                                 </Link>
                               </li>
                             </ul>
-                          : session?.user?.data[0]?.user_role_type === 'admin' ? 
+                          // : session?.user?.data[0]?.user_role_type === 'admin' ? 
+                          : session?.user?.data && session.user.data.length > 0 
+                            ? session.user.data[0]?.user_role_type 
+                            : null === 'admin' ? 
                             <ul className="flex flex-col gap-1">
                               <li>
                                 <Link

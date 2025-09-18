@@ -228,9 +228,47 @@ const AddCustomerForm = () => {
     
   };
 
+  const [file, setFile] = useState(null);
+  const handleChange = (e) => {
+    setFile(e.target.files[0]);
+  };
+
+  const fileSubmitButton = () => {
+    console.log("51");
+    const formData = new FormData();
+    formData.append('file', file);
+    console.log("53 file", file);
+    fetch(`${BaseURL}/course/upload_image_react_file_pond_apiview/`, {
+    // fetch(`https://tasteofindiamckinney.net/course/upload_image_react_file_pond_apiview/`, {
+    // fetch(`http://38.107.232.191:8000/course/upload_image_react_file_pond_apiview/`, {
+      method: 'POST',
+      body: formData,
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log("data.filePath", data.filePath);
+        localStorage.setItem("MainImagePath", data.filePath)
+      })
+      .catch(err => {
+        console.error('Upload error:', err);
+        // error('Upload failed');
+      });
+
+    
+  };
+
+
   return (
     <div className="rounded-lg border border-default-200">
       {/* <form onSubmit={handleSubmit(() => {})} className="p-6"> */}
+      <input name='file' type='file' onChange={handleChange} />
+      <button
+        onClick={fileSubmitButton}
+        className="flex items-center justify-center gap-2 rounded-lg bg-green-500 px-6 py-2.5 text-center text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-green-600"
+      >
+        <LuSave size={20} />
+        Save
+      </button>
       <form onSubmit={handleSubmit(onSubmit)} className="p-6">
         <div className="mb-6 grid gap-6 lg:grid-cols-2">
           <TextFormInput
