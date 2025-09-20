@@ -341,7 +341,7 @@ export const FOOTER_LINKS = {
   //   { name: "Blog" },
   // ],
   Support: [
-    { name: "About", link: "" },
+    // { name: "About", link: "" },
     { name: "Support Center", link: "" },
     { name: "Feedback", link: "" },
     { name: "Contact Us", link: "/contact-us" },

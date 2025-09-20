@@ -67,8 +67,8 @@ const Navbar = () => {
                   />
                   <Image
                     src={logoLightImg}
-                    height={500}
-                    width={600}
+                    height={250}
+                    width={250}
                     alt="logo"
                     className="hidden h-10 dark:flex"
                     placeholder="blur"

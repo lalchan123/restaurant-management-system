@@ -8,6 +8,7 @@ import FilePondPluginImageExifOrientation from "filepond-plugin-image-exif-orien
 import FilePondPluginImagePreview from "filepond-plugin-image-preview";
 import FilePondPluginImageCrop from "filepond-plugin-image-crop";
 import { SelectFormInput, TextFormInput } from "@/components";
+import axios from 'axios';
 
 // styles
 import "filepond/dist/filepond.min.css";
@@ -85,29 +86,34 @@ const PersonalDetailForm = () => {
 
   const onSubmit = async (data) => {
     console.log("32 Data:", data);
-    console.log("87 profileImage:", profileImage);
-    const formData = new FormData();
-    formData.append("file", profileImage[0]?.file);
+    console.log("89 profileImage:", profileImage);
+    console.log("90 profileImage[0]?.file:", profileImage[0]?.file);
+    console.log("91 profileImage[0]?.file?.name", profileImage[0]?.file?.name);
+    if (profileImage && profileImage.length > 0 && profileImage[0]?.file) {
+      const formData = new FormData();
+      formData.append("file", profileImage[0]?.file, profileImage[0]?.file?.name);
 
-    // fetch("http://127.0.0.1:8000/account/upload_image_apiview/", {
-    //   method: "POST",
-    //   body: formData
-    // });
-     try {
-    const res = await fetch("http://127.0.0.1:8000/account/upload_image_apiview/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
+      axios.post(`${BaseURL}/course/upload_image_react_file_pond_apiview/`, formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+        onUploadProgress: (e) => {
+          progress(e.lengthComputable, e.loaded, e.total);
+        }
+      })
+      .then(res => {
+        console.log("106 ProfileImage Upload success:", res.data);
+        localStorage.setItem("ProfileImage", res.data.filePath);
 
-    if (!res.ok) throw new Error("Request failed");
-    const result = await res.json();
-    console.log(result);
-  } catch (err) {
-    console.error("Error:", err);
-  }
+      })
+      .catch(err => {
+        console.error("Upload error:", err.message);
+      });
+
+    } else {
+      console.log("Hello Lalchan");
+    }
+
+    
+    
                
   }
 

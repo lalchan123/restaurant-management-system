@@ -13,6 +13,7 @@ import {
   categoriesData,
   dishesData,
 } from "@/assets/data";
+import RecentOrderPage from "./RecentOrderPage";
 // import AutoLogout from "@/ApiCallMethod/AutoLogout";
 
 export const metadata = {
@@ -23,20 +24,20 @@ const Dashboard = () => {
 
   // AutoLogout();
 
-  const columns = [
-    {
-      key: "id",
-      name: "Order ID",
-    },
-    {
-      key: "dish_id",
-      name: "Dish",
-    },
-    {
-      key: "amount",
-      name: "Total",
-    },
-  ];
+  // const columns = [
+  //   {
+  //     key: "id",
+  //     name: "Order ID",
+  //   },
+  //   {
+  //     key: "dish_id",
+  //     name: "Dish",
+  //   },
+  //   {
+  //     key: "amount",
+  //     name: "Total",
+  //   },
+  // ];
 
   return (
     <div className="w-full lg:ps-64 bg-green-600/5">
@@ -128,13 +129,14 @@ const Dashboard = () => {
             </div>
           </div>
 
-          <div className="pb-10 ">
+          {/* <div className="pb-10">
             <OrderDataTable
               columns={columns}
               rows={orderRows.slice(0, 6)}
               title="Recent Orders"
             />
-          </div>
+          </div> */}
+          <RecentOrderPage />
         </div>
       </div>
     </div>

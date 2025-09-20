@@ -37,7 +37,8 @@ const ContactForm = () => {
        
     const payload = {
       "mode": "create",
-      "user_id": session?.user?.id,
+      // "user_id": session?.user?.id,
+      "user_id": "0",
       "table_id": 46,
       "table_ref_id": uniqueKey,
       "data": [
@@ -48,7 +49,8 @@ const ContactForm = () => {
           "column_name": "First_Name",
           "table_ref_id": uniqueKey,
           "tab_rel_id": "",
-          "user_id": session?.user?.id
+          // "user_id": session?.user?.id
+          "user_id": "0"
         },
         {
           "table_id": 46,
@@ -57,7 +59,8 @@ const ContactForm = () => {
           "column_name": "Last_Name",
           "table_ref_id": uniqueKey,
           "tab_rel_id": "",
-          "user_id": session?.user?.id
+          // "user_id": session?.user?.id
+          "user_id": "0"
         },
         {
           "table_id": 46,
@@ -66,7 +69,8 @@ const ContactForm = () => {
           "column_name": "Email",
           "table_ref_id": uniqueKey,
           "tab_rel_id": "",
-          "user_id": session?.user?.id
+          // "user_id": session?.user?.id
+          "user_id": "0"
         },
         {
           "table_id": 46,
@@ -75,7 +79,8 @@ const ContactForm = () => {
           "column_name": "Message",
           "table_ref_id": uniqueKey,
           "tab_rel_id": "",
-          "user_id": session?.user?.id
+          // "user_id": session?.user?.id
+          "user_id": "0"
         }
       ]
     }
@@ -92,7 +97,7 @@ const ContactForm = () => {
       const EmailMessage ={
         subject: "Contact US",
         phone: "01306817790",
-        email: "lalchanbadsabd@gmail.com",
+        email: "pervez.cto@gmail.com",
         message: message
       }
       const { result: result1, message: message1 } = sendMail(EmailMessage);
