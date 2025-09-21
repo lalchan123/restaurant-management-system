@@ -9,13 +9,15 @@ import FilePondPluginImagePreview from "filepond-plugin-image-preview";
 import FilePondPluginImageCrop from "filepond-plugin-image-crop";
 import { SelectFormInput, TextFormInput } from "@/components";
 import axios from 'axios';
-
+import { toast } from "sonner";
 // styles
 import "filepond/dist/filepond.min.css";
 import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
 import { useSession } from "next-auth/react";
 import { BaseURL } from "@/ApiCallMethod/Constants";
 import { useEffect, useState } from "react";
+import restAPIPost from "@/ApiCallMethod/restAPIPost";
+import { getAPIPostDataByRefId } from "@/helpers";
 
 // Register the plugins
 registerPlugin(
@@ -27,7 +29,33 @@ registerPlugin(
 const PersonalDetailForm = () => {
 
   const { data: session } = useSession();
+  const [userProfileData, setUserProfileData] = useState([]);
   
+  // useEffect(() => {
+  //    const fetchData = async () => {
+  //     try {
+  //       await DataFetch();
+  //     } catch (err) {
+  //       console.error("Error fetching data:", err);
+  //     }
+  //   };
+  //   fetchData();
+  // }, [])
+  
+  // const DataFetch = async () => {
+  //   const userProfileData1 = await getAPIPostDataByRefId(47, "", session?.user?.data[0]?.user_id);
+  //   // console.log("39 userProfileData", userProfileData)
+  //   setUserProfileData(userProfileData1?.data)
+  //   // setColumns(dishesDataList?.column_name);
+  //   // setDishesData(dishesDataList?.data);
+  // }
+
+  // console.log("46 userProfileData", userProfileData)
+  // console.log("46 userProfileData[0]?.first_name", userProfileData[0]?.first_name)
+  // console.log("46 userProfileData[0]", userProfileData[0]?.first_name)
+  
+  // const userProfileData = await getAPIPostDataByRefId(47, "", session?.user?.data[0]?.user_id);
+  // console.log("44 userProfileData", userProfileData);
 
   const personalDetailsFormSchema = yup.object({
     fName: yup.string().required("Please enter your first name"),
@@ -52,30 +80,79 @@ const PersonalDetailForm = () => {
     })
   });
 
-  const defaultValue = {
-    fName: session?.user?.data[0]?.first_name,
-    lName: session?.user?.data[0]?.last_name,
-    userName: session?.user?.data[0]?.username,
-    email: session?.user?.data[0]?.email,
-    phoneNo: session?.user?.data[0]?.phone_number,
-    country: {
-      value: session?.user?.data[0]?.country,
-      label: session?.user?.data[0]?.country,
-    },
-    state: {
-      value: session?.user?.data[0]?.state,
-      label: session?.user?.data[0]?.state,
-    },
-    zipCode: {
-      value: session?.user?.data[0]?.zipcode,
-      label: session?.user?.data[0]?.zipcode,
-    },
-  };
+  // const defaultValue = {
+  //   fName: userProfileData[0]?.first_name ,
+  //   lName: userProfileData[0]?.last_name,
+  //   userName: userProfileData[0]?.username,
+  //   email: userProfileData[0]?.email,
+  //   phoneNo: userProfileData[0]?.phone_number,
+  //   country: {
+  //     value: userProfileData[0]?.country,
+  //     label: userProfileData[0]?.country,
+  //   },
+  //   state: {
+  //     value: userProfileData[0]?.state,
+  //     label: userProfileData[0]?.state,
+  //   },
+  //   zipCode: {
+  //     value: userProfileData[0]?.zipcode,
+  //     label: userProfileData[0]?.zipcode,
+  //   },
+  // };
 
-  const { control, handleSubmit } = useForm({
+  // const { control, handleSubmit } = useForm({
+  //   resolver: yupResolver(personalDetailsFormSchema),
+  //   defaultValues: defaultValue,
+  // });
+
+  const { control, handleSubmit, reset } = useForm({
     resolver: yupResolver(personalDetailsFormSchema),
-    defaultValues: defaultValue,
+    defaultValues: {
+      fName: "",
+      lName: "",
+      userName: "",
+      email: "",
+      phoneNo: "",
+      country: null,
+      state: null,
+      zipCode: null,
+    },
   });
+
+  // Fetch user profile data
+  useEffect(() => {
+    fetchData();
+  }, [session, reset]);
+
+   const fetchData = async () => {
+      try {
+        const userProfileData1 = await getAPIPostDataByRefId(
+          47,
+          "",
+          session?.user?.data[0]?.user_id
+        );
+        setUserProfileData(userProfileData1?.data || []);
+
+        // ✅ Reset form values once data is fetched
+        if (userProfileData1?.data?.length > 0) {
+          const u = userProfileData1.data[0];
+          reset({
+            fName: u?.first_name || "",
+            lName: u?.last_name || "",
+            userName: u?.username || "",
+            email: u?.email || "",
+            phoneNo: u?.phone_number || "",
+            country: u?.country ? { value: u.country, label: u.country } : null,
+            state: u?.state ? { value: u.state, label: u.state } : null,
+            zipCode: u?.zipcode ? { value: u.zipcode, label: u.zipcode } : null,
+          });
+        }
+      } catch (err) {
+        console.error("Error fetching data:", err);
+      }
+    };
+  
+
 
   const [profileImage, setProfileImage] = useState([]);
 
@@ -95,26 +172,79 @@ const PersonalDetailForm = () => {
 
       axios.post(`${BaseURL}/course/upload_image_react_file_pond_apiview/`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
-        onUploadProgress: (e) => {
-          progress(e.lengthComputable, e.loaded, e.total);
-        }
+        // onUploadProgress: (e) => {
+        //   progress(e.lengthComputable, e.loaded, e.total);
+        // }
       })
       .then(res => {
-        console.log("106 ProfileImage Upload success:", res.data);
+        console.log("106 ProfileImage Upload success:", res.data.filePath);
         localStorage.setItem("ProfileImage", res.data.filePath);
+        // setFilePathImage(res.data.filePath);
 
       })
       .catch(err => {
         console.error("Upload error:", err.message);
       });
 
-    } else {
-      console.log("Hello Lalchan");
-    }
+      // console.log("114 filePathImage lalchan", filePathImage);
+      console.log("115 profileImage lalchan", localStorage.getItem("ProfileImage"));
+      // const profileImage1 = localStorage.getItem("ProfileImage");
+      setTimeout(async () => {
+        const payload = {
+          "user_id": session?.user?.data[0]?.user_id,
+          "first_name": data?.fName,
+          "last_name": data?.lName,
+          "email": data?.email,
+          "username": data?.userName,
+          "phone_number": data?.phoneNo,
+          "country": data?.country?.value,
+          "state": data?.state?.value,
+          "zipcode": data?.zipCode?.value,
+          "user_profile_picture": localStorage.getItem("ProfileImage")
+        };
 
-    
-    
-               
+        const apiUrl = `${BaseURL}/account/user-profile-update/`;
+        const response_data = await restAPIPost(apiUrl, payload);
+        console.log("166 response_data", response_data);
+
+        if (response_data.status == 200) {
+          toast.success("User Profile Updated Successfully.");
+          localStorage.clear();
+          fetchData();
+          window.location.reload();
+          // router.push("/admin/dishes");
+        } else {
+          toast.error("Something Problem Face For User Profile Update Purpose.");
+        }
+      }, 5000); // 5000ms = 5 seconds
+
+    } else {
+      // console.log("Hello Lalchan");
+      const payload={
+        "user_id":session?.user?.data[0]?.user_id,
+        "first_name": data?.fName,
+        "last_name": data?.lName,
+        "email": data?.email,
+        "username": data?.userName,
+        "phone_number": data?.phoneNo,
+        "country": data?.country?.value,
+        "state": data?.state?.value,
+        "zipcode": data?.zipCode?.value,
+        "user_profile_picture":  ""
+      }
+      const apiUrl = `${BaseURL}/account/user-profile-update/`;
+      const response_data = await restAPIPost(apiUrl, payload)
+      console.log("166 response_data", response_data)
+      if(response_data.status == 200) {
+        toast.success("User Profile Updated Successfully.");
+        localStorage.clear();
+        fetchData();
+        window.location.reload();
+        // router.push("/admin/dishes");
+      } else {
+        toast.error("Something Problem Face For User Profile Update Purpose.");
+      }
+    }
   }
 
   return (
@@ -150,7 +280,8 @@ const PersonalDetailForm = () => {
                 />
               ): (
                 <Image
-                  src={`${BaseURL}${session?.user?.data[0]?.user_profile_picture}`}
+                  // src={`${BaseURL}${session?.user?.data[0]?.user_profile_picture}`}
+                  src={`${BaseURL}${userProfileData[0]?.user_profile_picture}`}
                   alt="burrito"
                   width={200}
                   height={75}

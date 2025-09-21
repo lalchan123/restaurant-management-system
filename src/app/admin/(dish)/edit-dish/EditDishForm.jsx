@@ -356,7 +356,7 @@ const EditDishForm = ({ dishData, restuarantName}) => {
                 instanceId="product-category"
                 control={control}
                 options={[
-                                    { value: "Coffee", label: "Coffee" },
+                  { value: "Coffee", label: "Coffee" },
                   { value: "Burger", label: "Burger" },
                   { value: "Noodles", label: "Noodles" },
                   { value: "Pizza", label: "Pizza" },

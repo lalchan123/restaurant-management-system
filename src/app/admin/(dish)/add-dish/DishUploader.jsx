@@ -98,9 +98,9 @@ const DishUploader = async() => {
 
     axios.post(`${BaseURL}/course/upload_image_react_file_pond_apiview/`, formData, {
       headers: { "Content-Type": "multipart/form-data" },
-      onUploadProgress: (e) => {
-        progress(e.lengthComputable, e.loaded, e.total);
-      }
+      // onUploadProgress: (e) => {
+      //   progress(e.lengthComputable, e.loaded, e.total);
+      // }
     })
     .then(res => {
       console.log("106 MainImagePath Upload success:", res.data);
@@ -293,9 +293,9 @@ const DishUploader = async() => {
 
     axios.post(`${BaseURL}/course/upload_image_react_file_pond_apiview/`, formData, {
       headers: { "Content-Type": "multipart/form-data" },
-      onUploadProgress: (e) => {
-        progress(e.lengthComputable, e.loaded, e.total);
-      }
+      // onUploadProgress: (e) => {
+      //   progress(e.lengthComputable, e.loaded, e.total);
+      // }
     })
     .then(res => {
       console.log("301 AdditionalImagePath Upload success:", res.data);

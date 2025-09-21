@@ -14,15 +14,27 @@ const ShippingAddressForm = () => {
     slName: yup.string().required("Please enter your last Name"),
     scompanyName: yup.string().optional(),
     saddress: yup.string().required("Please enter your Address"),
-    scountry: yup.string().required("Please select your Country"),
-    sstate: yup.string().required("Please select your State/Province"),
-    scity: yup.string().required("Please select your City"),
-    szipCode: yup.string().required("Please select your ZIP/Postal code"),
+    scountry:  yup.object({
+      value: yup.string(),
+      label: yup.string(),
+    }),
+    sstate: yup.object({
+      value: yup.string(),
+      label: yup.string(),
+    }),
+    scity: yup.object({
+      value: yup.string(),
+      label: yup.string(),
+    }),
+    szipCode: yup.object({
+      value: yup.string(),
+      label: yup.string(),
+    }),
     semail: yup
       .string()
       .email("Please enter a valid email")
       .required("Please enter your email"),
-    sphoneNo: yup.number().required("Please enter your Phone NO."),
+    sphoneNo: yup.string().required("Please enter your Phone NO."),
   });
 
   const { control, handleSubmit } = useForm({

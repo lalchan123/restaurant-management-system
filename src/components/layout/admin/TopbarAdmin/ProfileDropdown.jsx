@@ -1,12 +1,13 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { LuHome, LuLogOut, LuNewspaper, LuUser } from "react-icons/lu";
 import { cn } from "@/utils";
 import { avatar1Img } from "@/assets/data";
 import { useSession } from "next-auth/react";
 import { BaseURL } from "@/ApiCallMethod/Constants";
+import { getAPIPostDataByRefId } from "@/helpers";
 
 const profileDropdownItems = [
   {
@@ -34,6 +35,26 @@ const profileDropdownItems = [
 const ProfileDropdown = () => {
 
   const { data: session } = useSession();
+
+  const [userProfileData, setUserProfileData] = useState([]);
+
+  useEffect(() => {
+      fetchData();
+  }, []);
+  
+  const fetchData = async () => {
+    try {
+      const userProfileData1 = await getAPIPostDataByRefId(
+        47,
+        "",
+        session?.user?.data[0]?.user_id
+      );
+      setUserProfileData(userProfileData1?.data || []);
+    } catch (err) {
+      console.error("Error fetching data:", err);
+    }
+  };
+    
   
 
   return (
@@ -48,12 +69,15 @@ const ProfileDropdown = () => {
           alt="avatar"
           width={70}
           height={30}
-          src={`${BaseURL}${session?.user?.data[0]?.user_profile_picture}`}
+          src={`${BaseURL}${userProfileData[0]?.user_profile_picture}`}
+          // src={`${BaseURL}${session?.user?.data[0]?.user_profile_picture}`}
           // src={avatar1Img}
         />
         <div className="hidden text-start lg:block">
-          <p className="text-sm font-medium text-default-700">{session?.user?.data[0]?.first_name} {session?.user?.data[0]?.last_name}</p>
-          <p className="mt-1 text-xs text-default-500">{session?.user?.data[0]?.user_role_type ==='admin'? session?.user?.data[0]?.user_role_type : session?.user?.data[0]?.user_role_type}</p>
+          <p className="text-sm font-medium text-default-700">{userProfileData[0]?.first_name} {userProfileData[0]?.last_name}</p>
+          <p className="mt-1 text-xs text-default-500">{userProfileData[0]?.user_role_type ==='admin'? userProfileData[0]?.user_role_type : userProfileData[0]?.user_role_type}</p>
+          {/* <p className="text-sm font-medium text-default-700">{session?.user?.data[0]?.first_name} {session?.user?.data[0]?.last_name}</p>
+          <p className="mt-1 text-xs text-default-500">{session?.user?.data[0]?.user_role_type ==='admin'? session?.user?.data[0]?.user_role_type : session?.user?.data[0]?.user_role_type}</p> */}
         </div>
       </button>
       <div className="hs-dropdown-menu duration mt-2 hidden min-w-[12rem] rounded-lg border border-default-200 bg-white p-2 opacity-0 shadow-md transition-[opacity,margin] hs-dropdown-open:opacity-100 dark:bg-default-50">

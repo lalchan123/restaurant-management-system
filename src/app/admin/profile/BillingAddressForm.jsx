@@ -14,15 +14,27 @@ const BillingAddressForm = () => {
     blName: yup.string().required("Please enter your last Name"),
     bcompanyName: yup.string().optional(),
     baddress: yup.string().required("Please enter your Address"),
-    bcountry: yup.string().required("Please select your Country"),
-    bstate: yup.string().required("Please select your State/Province"),
-    bcity: yup.string().required("Please select your City"),
-    bzipCode: yup.string().required("Please select your ZIP/Postal code"),
+    bcountry: yup.object({
+      value: yup.string(),
+      label: yup.string(),
+    }),
+    bstate: yup.object({
+      value: yup.string(),
+      label: yup.string(),
+    }),
+    bcity: yup.object({
+      value: yup.string(),
+      label: yup.string(),
+    }),
+    bzipCode: yup.object({
+      value: yup.string(),
+      label: yup.string(),
+    }),
     bemail: yup
       .string()
       .email("Please enter a valid email")
       .required("Please enter your email"),
-    bphoneNo: yup.number().required("Please enter your Phone NO."),
+    bphoneNo: yup.string().required("Please enter your Phone NO."),
   });
 
   const { control, handleSubmit } = useForm({
