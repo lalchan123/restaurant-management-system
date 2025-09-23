@@ -70,7 +70,8 @@ const OrderSummary = () => {
             <p className="text-sm font-medium text-default-700">
               -{currentCurrency}
               {/* {getCalculatedOrder().totalDiscount.toFixed(2)} */}
-              {parseFloat(localStorage.getItem("discountAmountOffer"))}
+              {/* {parseFloat(localStorage.getItem("discountAmountOffer"))} */}
+              {(parseFloat(localStorage.getItem("discountAmountOffer"))).toFixed(2)}
             </p>
           </div>
           <div className="mb-3 flex justify-between">

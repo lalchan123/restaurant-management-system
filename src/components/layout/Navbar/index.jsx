@@ -112,6 +112,15 @@ const Navbar = () => {
                               <li>
                                 <Link
                                   className="flex items-center gap-3 rounded px-3 py-2 font-normal text-default-600 transition-all hover:bg-default-100 hover:text-default-700"
+                                  href="/user/dashboard"
+                                  target="_blank"
+                                >
+                                  <LuHome size={16} /> User Dashboard
+                                </Link>
+                              </li>
+                              <li>
+                                <Link
+                                  className="flex items-center gap-3 rounded px-3 py-2 font-normal text-default-600 transition-all hover:bg-default-100 hover:text-default-700"
                                   href="/user/profile"
                                   target="_blank"
                                 >

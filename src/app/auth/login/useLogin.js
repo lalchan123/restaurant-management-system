@@ -45,17 +45,17 @@ const useLogin = () => {
     if (session?.user) {
       const redirectLink = searchParams.get("redirectTo");
       const adminRoute = redirectLink?.startsWith("/admin");
-      // if (session?.user?.data[0]?.user_role_type == "admin") {
-      if (session?.user?.data && session.user.data.length > 0 
-        ? session.user.data[0]?.user_role_type 
-        : null == "admin") {
+      if (session?.user?.data[0]?.user_role_type == "admin") {
+      // if (session?.user?.data && session.user.data.length > 0 
+      //   ? session.user.data[0]?.user_role_type 
+      //   : null == "admin") {
         router.push(
           redirectLink && adminRoute ? redirectLink : "/admin/dashboard"
         );
-      // } else if (session?.user?.data[0]?.user_role_type == "user") {
-      } else if (session?.user?.data && session.user.data.length > 0 
-              ? session.user.data[0]?.user_role_type 
-              : null == "user") {
+      } else if (session?.user?.data[0]?.user_role_type == "user") {
+      // } else if (session?.user?.data && session.user.data.length > 0 
+      //         ? session.user.data[0]?.user_role_type 
+      //         : null == "user") {
         router.push(redirectLink && !adminRoute ? redirectLink : "/");
         // router.push(redirectLink && !adminRoute ? redirectLink : "/home");
       }

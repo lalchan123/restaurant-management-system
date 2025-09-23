@@ -8,9 +8,10 @@ import {
   offerBgOtherImg,
 } from "@/assets/data/images";
 import VerticalMenu from "./VerticalMenu";
-import { getAdminVerticalMenuItems } from "@/helpers";
+// import { getAdminVerticalMenuItems } from "@/helpers";
+import { getUserVerticalMenuItems } from "@/helpers";
 
-const MenuAdmin = () => {
+const MenuUser = () => {
   return (
     <div
       id="application-sidebar"
@@ -40,7 +41,7 @@ const MenuAdmin = () => {
       </div>
 
       <SimplebarReactClient className="h-[calc(100%-390px)]">
-        <VerticalMenu menuItems={getAdminVerticalMenuItems()} />
+        <VerticalMenu menuItems={getUserVerticalMenuItems()} />
       </SimplebarReactClient>
 
       <ul className="admin-menu flex flex-col gap-2 px-4 pt-10">
@@ -64,7 +65,7 @@ const MenuAdmin = () => {
         <li className="menu-item">
           <Link
             className="flex items-center gap-x-3.5 rounded-md px-4 py-3 text-sm text-default-700 hover:bg-default-100"
-            href="/admin/profile"
+            href="/user/profile"
           >
             <LuUserCircle2 size={20} />
             Profile
@@ -84,4 +85,4 @@ const MenuAdmin = () => {
   );
 };
 
-export default MenuAdmin;
+export default MenuUser;

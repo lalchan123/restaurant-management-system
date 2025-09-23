@@ -97,8 +97,10 @@ const OrderListPage = async() => {
       "table_ref_id": "20250811095153046"
     }
     const apiUrl = `${BaseURL}/account/restaurant-products-sales-api/`;
+    console.log("100 payload", payload)
     const ordersDataList = await restAPIPost(apiUrl, payload)
-    console.log("166 ordersDataList", ordersDataList)
+    console.log("102 ordersDataList", ordersDataList)
+    console.log("103 ordersDataList?.data?.sales", ordersDataList?.data?.sales)
     setColumns(ordersDataList?.data?.sales_column_name);
     setOrdersData(ordersDataList?.data?.sales);
   }

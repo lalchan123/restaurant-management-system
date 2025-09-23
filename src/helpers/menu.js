@@ -1,6 +1,7 @@
 import {
   ADMIN_VERTICAL_MENU_ITEMS,
   CLIENT_VERTICAL_MENU_ITEMS,
+  USER_VERTICAL_MENU_ITEMS,
   HORIZONTAL_MENU_ITEMS,
 } from "@/assets/data";
 
@@ -12,6 +13,11 @@ const getClientVerticalMenuItems = () => {
 const getAdminVerticalMenuItems = () => {
   // NOTE - You can fetch from server and return here as well
   return ADMIN_VERTICAL_MENU_ITEMS;
+};
+
+const getUserVerticalMenuItems = () => {
+  // NOTE - You can fetch from server and return here as well
+  return USER_VERTICAL_MENU_ITEMS;
 };
 
 const getHorizontalMenuItems = () => {
@@ -65,6 +71,7 @@ export {
   getHorizontalMenuItems,
   getClientVerticalMenuItems,
   getAdminVerticalMenuItems,
+  getUserVerticalMenuItems,
   findAllParent,
   findMenuItem,
   getMenuItemFromURL,

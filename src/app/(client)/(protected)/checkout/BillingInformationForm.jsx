@@ -565,7 +565,8 @@ const BillingInformation = () => {
           router.push(`/`);
           toast.success("Order Created and Confirmation Successfully. Please your email check.");
         } else {
-          router.push(`/order-list/`);
+          // router.push(`/order-list/`);
+          router.push(`/`);
           toast.success("Order Created and Confirmation Successfully. Please your email check.");
         }
       } else {

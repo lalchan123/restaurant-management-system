@@ -325,6 +325,22 @@ export const ADMIN_VERTICAL_MENU_ITEMS = [
     isTitle: true,
   },
 ];
+export const USER_VERTICAL_MENU_ITEMS = [
+  {
+    key: "dashboard-page",
+    label: "Dashboard",
+    icon: LuLayoutGrid,
+    url: "/user/dashboard",
+    isTitle: true,
+  },
+  {
+    key: "OrdersHistory",
+    label: "Order History",
+    icon: LuListOrdered,
+    url: "/user/order-history",
+    isTitle: true,
+  }
+];
 
 export const FOOTER_LINKS = {
   About: [
