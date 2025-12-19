@@ -20,21 +20,58 @@ import TabNavigation from "./TabNavigation";
 import VerticalMenu from "./VerticalMenu";
 import { OfferAdBanner } from "@/components";
 import { logoDarkImg, logoLightImg } from "@/assets/data/images";
-import { getClientVerticalMenuItems, getHorizontalMenuItems } from "@/helpers";
+import { getAPIPostDataByRefId, getClientVerticalMenuItems, getHorizontalMenuItems } from "@/helpers";
 import ProductSearchBar from "./ProductSearchBar";
 import Link from "next/link";
 import CartAndWishList from "./CartAndWishList";
 import { useSession } from "next-auth/react";
+import { useEffect, useState } from "react";
+import Box from "@mui/material/Box";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogTitle from '@mui/material/DialogTitle';
+import Button from "@mui/material/Button";
+import FormControl from "@mui/material/FormControl";
+import Tooltip from "@mui/material/Tooltip";
+import TextField from '@mui/material/TextField';
+import { useRouter } from "next/navigation";
 const HorizontalMenu = dynamic(() => import("./HorizontalMenu"));
 const StickyHeader = dynamic(() => import("@/components/StickyHeader"), {
   ssr: false,
 });
 
-const Navbar = () => {
+const Navbar = async() => {
   
   const { data: session } = useSession();
+  const router = useRouter();
   // console.log("session?.user?.data[0]?.user_id;", session?.user?.data[0]?.user_id)
   // console.log("session?.user?.data[0]", session?.user)
+  const [pagesData, SetPagesData] = useState([]);
+  const [pageName, SetPageName] = useState("");
+
+ 
+
+  
+  useEffect(() => {
+    DataFetch()
+  }, [])
+    
+  const DataFetch = async () => {
+    const pagesDataList = await getAPIPostDataByRefId(51, "", localStorage.getItem("user_id"));
+    console.log("56 pagesDataList?.data", pagesDataList?.data)
+    SetPagesData(pagesDataList?.data);
+    localStorage.removeItem("pageName");
+  }
+
+  const [createPageShow, SetCreatePageShow] = useState(false)
+  const handleCreatePageClose = () => {
+    SetCreatePageShow(false)
+  }
+  const PageShowRedirect = () => {
+    router.push("/webpage/web-page");
+  }
+
   return (
     <>
       <OfferAdBanner />
@@ -104,7 +141,7 @@ const Navbar = () => {
                     </div>
                     <div className="hs-dropdown-menu z-20 mt-4 hidden min-w-[200px] rounded-lg border border-default-100 bg-white p-1.5 opacity-0 shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px] transition-[opacity,margin] hs-dropdown-open:opacity-100 dark:bg-default-50">
                       {
-                          session?.user?.data[0]?.user_role_type === 'user' ? 
+                        session?.user?.data[0]?.user_role_type === 'user' ? 
                           // session?.user?.data && session.user.data.length > 0 
                           //   ? session.user.data[0]?.user_role_type 
                           //   : null === 'user' ? 
@@ -260,8 +297,44 @@ const Navbar = () => {
                                 </Link>
                               </li>
                             </ul>
-                          : <ul className="flex flex-col gap-1">
+                          : localStorage.getItem("email") &&
+                            localStorage.getItem("user_id") &&
+                            localStorage.getItem("token") ?
+                            <ul className="flex flex-col gap-1">
+                              <li
+                                className="flex items-center gap-3 rounded px-3 py-2 font-normal text-default-600 transition-all hover:bg-default-100 hover:text-default-700"
+                                onClick={() => {
+                                  SetCreatePageShow(true)
+                                }}
+                              >
+                                <LuUserCircle size={16} /> Add Web Page
+                              </li>
                               <li>
+                                <Link
+                                  href="/auth/web-admin/logout"
+                                  className="flex w-full items-center gap-3 rounded px-3 py-2 font-normal text-default-600 transition-all hover:bg-default-100 hover:text-default-700"
+                                >
+                                  <LuLogOut size={16} />
+                                  Log Out
+                                </Link>
+                              </li>
+                            </ul>
+                          : <ul className="flex flex-col gap-1">
+                              {/* <li
+                                className="flex items-center gap-3 rounded px-3 py-2 font-normal text-default-600 transition-all hover:bg-default-100 hover:text-default-700"
+                                onClick={() => {
+                                  SetCreatePageShow(true)
+                                }}
+                              >
+                                <LuUserCircle size={16} /> Add Web Page
+                              </li> */}
+                              <li>
+                                <Link
+                                  className="flex items-center gap-3 rounded px-3 py-2 font-normal text-default-600 transition-all hover:bg-default-100 hover:text-default-700"
+                                  href="/auth/web-admin/login"
+                                >
+                                  <LuUserCircle size={16} /> Admin Login
+                                </Link>
                                 <Link
                                   className="flex items-center gap-3 rounded px-3 py-2 font-normal text-default-600 transition-all hover:bg-default-100 hover:text-default-700"
                                   href="/auth/login"
@@ -370,6 +443,88 @@ const Navbar = () => {
           </nav>
         </SimplebarReactClient>
       </div>
+
+      <Dialog
+        maxWidth="lg"
+        open={createPageShow}
+        onClose={handleCreatePageClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+        PaperProps={{ sx: { borderRadius: "50px" } }}
+      >
+        <DialogTitle>Page Name show</DialogTitle>
+        <DialogContent>
+          <Box sx={{ minWidth: 500, minHeight: 250 }}>
+           <select
+              id="function_name"
+              class="relative inline-block text-left inline-flex justify-center gap-x-1.5 ml-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 w-full"
+              value={pageName}
+              onChange={(e) => {
+                SetPageName(e.target.value);
+                localStorage.setItem("pageName", JSON.stringify(e.target.value))
+              }}
+            >
+              <option selected className="text-xs">
+                {"Page Name"}
+              </option>
+              {
+                pagesData?.map((item, i) => {
+                  return (
+                    <option
+                      className="text-xs"
+                      value={`${item?.page_name}`}
+                    >
+                      {item?.page_name}
+                    </option>
+                  )
+                })
+              }
+              
+            </select>
+          </Box>
+        </DialogContent>
+        <DialogActions sx={{ pt: 2, pb: 4, pl: 2, pr: 2 }}>
+          <Tooltip title="Close" placement="top">
+            <Button
+              onClick={handleCreatePageClose}
+              size="small"
+              sx={{
+                fontSize: "16px",
+                color: "black",
+                marginRight: -4,
+                padding: 0,
+                "&:hover": {
+                  color: "green",
+                },
+                height: 0,
+                width: 0,
+              }}
+            >
+              ✘
+            </Button>
+          </Tooltip> 
+          <Tooltip title="Submit" placement="top">
+            <Button
+              onClick={PageShowRedirect}
+              autoFocus
+              size="small"
+              sx={{
+                fontSize: "20px",
+                color: "black",
+                margin: 0,
+                padding: 0,
+                "&:hover": {
+                  color: "green",
+                },
+                height: 0,
+                width: 0,
+              }}
+            >
+              ⮕
+            </Button>
+          </Tooltip>  
+        </DialogActions>
+      </Dialog>
     </>
   );
 };

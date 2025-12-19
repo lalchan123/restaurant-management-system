@@ -11,7 +11,7 @@ export default function AutoLogout() {
     const timer = setTimeout(async () => {
       await signOut({ redirect: false });
       router.push("/auth/login");
-    }, 5 * 60 * 1000); // 5 minutes = 300000 ms
+    }, 10 * 60 * 1000); // 5 minutes = 300000 ms
 
     // Cleanup timer on unmount
     return () => clearTimeout(timer);
