@@ -39,11 +39,11 @@ const Layout = ({ children }) => {
   return (
     <>
       {/* <Topbar /> */}
-      <DynamicNavbar />
+      {/* <DynamicNavbar /> */}
       {/* <Navbar /> */}
       {children}
       {/* <DynamicNavbar /> */}
-      <DynamicFooter />
+      {/* <DynamicFooter /> */}
       {/* <DynamicFooter /> */}
       {/* <Footer hideLinks /> */}
     </>
